@@ -337,9 +337,9 @@ function Home() {
                     variants={fadeUp}
                     whileHover={{ y: -4 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]"
+                    className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-soft)]"
                   >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="text-sm font-semibold text-foreground">{label}</span>
