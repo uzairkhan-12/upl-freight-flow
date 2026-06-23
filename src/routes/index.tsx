@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3 } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import airFreight from "@/assets/air-freight.jpg";
@@ -24,7 +25,16 @@ function Home() {
     <Layout>
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
-        <img src={heroPort} alt="Container port at dusk" width={1920} height={1280} className="absolute inset-0 h-full w-full object-cover" />
+        <video
+          src={heroVideo.url}
+          poster={heroPort}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-x relative py-28 md:py-40 text-white">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-accent">United Parcel Logistics</p>
