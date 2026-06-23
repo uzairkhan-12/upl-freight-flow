@@ -64,8 +64,10 @@
   --amber-soft: oklch(0.85 0.12 75);
 
   --gradient-hero: linear-gradient(135deg, oklch(0.14 0.05 255 / 0.92), oklch(0.22 0.06 250 / 0.7));
+  --gradient-hero-soft: linear-gradient(135deg, oklch(0.95 0.01 240 / 0.92), oklch(0.99 0.005 80 / 0.9));
   --gradient-amber: linear-gradient(135deg, oklch(0.72 0.17 55), oklch(0.78 0.16 65));
   --shadow-elevated: 0 20px 50px -20px oklch(0.14 0.05 255 / 0.35);
+  --shadow-soft: 0 10px 30px -15px oklch(0.14 0.05 255 / 0.12);
   --shadow-amber: 0 15px 40px -15px oklch(0.72 0.17 55 / 0.3);
 }
 
