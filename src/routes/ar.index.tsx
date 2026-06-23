@@ -142,8 +142,8 @@ function HomeAr() {
               { icon: Warehouse, title: "التخزين", desc: "مستودعات جمركية وحلول تنفيذ وتقنيات مخزون في مراكز استراتيجية." },
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
-                <Link to="/ar/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
+                <Link to="/ar/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-soft)]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
