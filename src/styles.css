@@ -116,3 +116,51 @@
 @utility section-pad { padding-block: 5rem; }
 
 @utility hero-overlay { background: var(--gradient-hero); }
+
+@keyframes amber-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.17 55 / 0.5); }
+  50% { box-shadow: 0 0 0 12px oklch(0.72 0.17 55 / 0); }
+}
+@keyframes amber-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes amber-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility amber-pulse { animation: amber-pulse 2.4s ease-out infinite; }
+@utility amber-float { animation: amber-float 3.5s ease-in-out infinite; }
+
+@utility card-sheen {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, oklch(0.72 0.17 55 / 0.22) 50%, transparent 70%);
+    transform: translateX(-120%) skewX(-20deg);
+    transition: transform 0.9s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  &:hover::before { transform: translateX(220%) skewX(-20deg); }
+  & > * { position: relative; z-index: 1; }
+}
+
+@utility accent-bar {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 3px;
+    width: 0;
+    background: var(--gradient-amber);
+    border-radius: 999px;
+    transition: width 0.5s ease;
+  }
+  &:hover::after { width: 100%; }
+}
