@@ -231,12 +231,22 @@ function Home() {
       </section>
 
       {/* WHY US */}
-      <section className="section-pad">
-        <div className="container-x">
+      <section className="section-pad relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <span className="absolute -top-24 right-10 h-72 w-72 rounded-full bg-accent/15 blur-3xl amber-float" />
+          <span className="absolute bottom-0 -left-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+        </div>
+        <div className="container-x relative">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">Why UPL</p>
           <h2 className="mt-2 max-w-2xl font-display text-3xl font-bold md:text-5xl">Built for businesses that can't wait.</h2>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={stagger}
+            className="mt-12 grid gap-8 md:grid-cols-3"
+          >
             {[
               { icon: Globe2, title: "Global reach, local touch", desc: "Operating in 120+ countries with dedicated regional teams." },
               { icon: ShieldCheck, title: "Cargo handled with care", desc: "Compliance, customs and insurance built into every lane." },
@@ -245,15 +255,24 @@ function Home() {
               { icon: Truck, title: "Owned fleet network", desc: "10,000+ vehicles and a partner network covering the last mile." },
               { icon: Warehouse, title: "Strategic warehousing", desc: "1.4M sqft across hubs in EMEA, APAC and the Americas." },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-2xl border border-border p-6">
-                <Icon className="h-6 w-6 text-accent" />
-                <h3 className="mt-4 font-display text-lg font-semibold">{title}</h3>
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-accent hover:shadow-[var(--shadow-amber)]"
+              >
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-300 group-hover:bg-[var(--gradient-amber)] group-hover:text-[var(--navy-deep)] group-hover:amber-pulse">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-[var(--navy-deep)]">{title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
+
 
       {/* INDUSTRIES STRIP */}
       <section className="overflow-hidden bg-secondary">
