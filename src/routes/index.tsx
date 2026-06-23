@@ -145,8 +145,8 @@ function Home() {
               <motion.div
                 key={label}
                 variants={fadeUp}
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 180, damping: 28 }}
                 className="card-sheen rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
                 <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
@@ -185,7 +185,7 @@ function Home() {
               { icon: Truck, title: "Road Transport", desc: "Cross-border trucking and regional last-mile delivery fleets." },
               { icon: Warehouse, title: "Warehousing", desc: "Bonded storage, fulfilment and inventory tech at strategic hubs." },
             ].map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} variants={fadeUp} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
                 <Link to="/services" className="card-sheen group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-amber)]">
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
                     <Icon className="h-6 w-6" />
@@ -258,11 +258,11 @@ function Home() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-accent hover:shadow-[var(--shadow-amber)]"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 180, damping: 28 }}
+                className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-300 group-hover:bg-[var(--gradient-amber)] group-hover:text-[var(--navy-deep)] group-hover:amber-pulse">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-[var(--navy-deep)] group-hover:amber-pulse">
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-[var(--navy-deep)]">{title}</h3>

@@ -66,7 +66,7 @@
   --gradient-hero: linear-gradient(135deg, oklch(0.14 0.05 255 / 0.92), oklch(0.22 0.06 250 / 0.7));
   --gradient-amber: linear-gradient(135deg, oklch(0.72 0.17 55), oklch(0.78 0.16 65));
   --shadow-elevated: 0 20px 50px -20px oklch(0.14 0.05 255 / 0.35);
-  --shadow-amber: 0 15px 40px -15px oklch(0.72 0.17 55 / 0.5);
+  --shadow-amber: 0 15px 40px -15px oklch(0.72 0.17 55 / 0.3);
 }
 
 @layer base {
@@ -118,20 +118,20 @@
 @utility hero-overlay { background: var(--gradient-hero); }
 
 @keyframes amber-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.17 55 / 0.5); }
-  50% { box-shadow: 0 0 0 12px oklch(0.72 0.17 55 / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.17 55 / 0.28); }
+  50% { box-shadow: 0 0 0 8px oklch(0.72 0.17 55 / 0); }
 }
 @keyframes amber-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
 }
 @keyframes amber-shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
-@utility amber-pulse { animation: amber-pulse 2.4s ease-out infinite; }
-@utility amber-float { animation: amber-float 3.5s ease-in-out infinite; }
+@utility amber-pulse { animation: amber-pulse 4s ease-out infinite; }
+@utility amber-float { animation: amber-float 6s ease-in-out infinite; }
 
 @utility card-sheen {
   position: relative;
@@ -140,9 +140,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(110deg, transparent 30%, oklch(0.72 0.17 55 / 0.22) 50%, transparent 70%);
+    background: linear-gradient(110deg, transparent 30%, oklch(0.72 0.17 55 / 0.12) 50%, transparent 70%);
     transform: translateX(-120%) skewX(-20deg);
-    transition: transform 0.9s ease;
+    transition: transform 1.4s ease;
     pointer-events: none;
     z-index: 0;
   }
@@ -160,7 +160,7 @@
     width: 0;
     background: var(--gradient-amber);
     border-radius: 999px;
-    transition: width 0.5s ease;
+    transition: width 0.8s ease;
   }
   &:hover::after { width: 100%; }
 }
