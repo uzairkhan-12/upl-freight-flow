@@ -16,6 +16,12 @@ import { Route as NetworkRouteImport } from './routes/network'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArIndexRouteImport } from './routes/ar.index'
+import { Route as ArTrackRouteImport } from './routes/ar.track'
+import { Route as ArServicesRouteImport } from './routes/ar.services'
+import { Route as ArNetworkRouteImport } from './routes/ar.network'
+import { Route as ArContactRouteImport } from './routes/ar.contact'
+import { Route as ArAboutRouteImport } from './routes/ar.about'
 
 const TrackRoute = TrackRouteImport.update({
   id: '/track',
@@ -52,6 +58,36 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArIndexRoute = ArIndexRouteImport.update({
+  id: '/ar/',
+  path: '/ar/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArTrackRoute = ArTrackRouteImport.update({
+  id: '/ar/track',
+  path: '/ar/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArServicesRoute = ArServicesRouteImport.update({
+  id: '/ar/services',
+  path: '/ar/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArNetworkRoute = ArNetworkRouteImport.update({
+  id: '/ar/network',
+  path: '/ar/network',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArContactRoute = ArContactRouteImport.update({
+  id: '/ar/contact',
+  path: '/ar/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArAboutRoute = ArAboutRouteImport.update({
+  id: '/ar/about',
+  path: '/ar/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +97,12 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/track': typeof TrackRoute
+  '/ar/about': typeof ArAboutRoute
+  '/ar/contact': typeof ArContactRoute
+  '/ar/network': typeof ArNetworkRoute
+  '/ar/services': typeof ArServicesRoute
+  '/ar/track': typeof ArTrackRoute
+  '/ar/': typeof ArIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +112,12 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/track': typeof TrackRoute
+  '/ar/about': typeof ArAboutRoute
+  '/ar/contact': typeof ArContactRoute
+  '/ar/network': typeof ArNetworkRoute
+  '/ar/services': typeof ArServicesRoute
+  '/ar/track': typeof ArTrackRoute
+  '/ar': typeof ArIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +128,12 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/track': typeof TrackRoute
+  '/ar/about': typeof ArAboutRoute
+  '/ar/contact': typeof ArContactRoute
+  '/ar/network': typeof ArNetworkRoute
+  '/ar/services': typeof ArServicesRoute
+  '/ar/track': typeof ArTrackRoute
+  '/ar/': typeof ArIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +145,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/track'
+    | '/ar/about'
+    | '/ar/contact'
+    | '/ar/network'
+    | '/ar/services'
+    | '/ar/track'
+    | '/ar/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +160,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/track'
+    | '/ar/about'
+    | '/ar/contact'
+    | '/ar/network'
+    | '/ar/services'
+    | '/ar/track'
+    | '/ar'
   id:
     | '__root__'
     | '/'
@@ -109,6 +175,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/track'
+    | '/ar/about'
+    | '/ar/contact'
+    | '/ar/network'
+    | '/ar/services'
+    | '/ar/track'
+    | '/ar/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +191,12 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TrackRoute: typeof TrackRoute
+  ArAboutRoute: typeof ArAboutRoute
+  ArContactRoute: typeof ArContactRoute
+  ArNetworkRoute: typeof ArNetworkRoute
+  ArServicesRoute: typeof ArServicesRoute
+  ArTrackRoute: typeof ArTrackRoute
+  ArIndexRoute: typeof ArIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +250,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ar/': {
+      id: '/ar/'
+      path: '/ar'
+      fullPath: '/ar/'
+      preLoaderRoute: typeof ArIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/track': {
+      id: '/ar/track'
+      path: '/ar/track'
+      fullPath: '/ar/track'
+      preLoaderRoute: typeof ArTrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/services': {
+      id: '/ar/services'
+      path: '/ar/services'
+      fullPath: '/ar/services'
+      preLoaderRoute: typeof ArServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/network': {
+      id: '/ar/network'
+      path: '/ar/network'
+      fullPath: '/ar/network'
+      preLoaderRoute: typeof ArNetworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/contact': {
+      id: '/ar/contact'
+      path: '/ar/contact'
+      fullPath: '/ar/contact'
+      preLoaderRoute: typeof ArContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ar/about': {
+      id: '/ar/about'
+      path: '/ar/about'
+      fullPath: '/ar/about'
+      preLoaderRoute: typeof ArAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +303,12 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TrackRoute: TrackRoute,
+  ArAboutRoute: ArAboutRoute,
+  ArContactRoute: ArContactRoute,
+  ArNetworkRoute: ArNetworkRoute,
+  ArServicesRoute: ArServicesRoute,
+  ArTrackRoute: ArTrackRoute,
+  ArIndexRoute: ArIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
