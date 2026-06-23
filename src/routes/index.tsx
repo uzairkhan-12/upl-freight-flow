@@ -262,10 +262,10 @@ function Home() {
                 transition={{ type: "spring", stiffness: 180, damping: 28 }}
                 className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-[var(--navy-deep)] group-hover:amber-pulse">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground group-hover:amber-pulse">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-[var(--navy-deep)]">{title}</h3>
+                <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-foreground">{title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
               </motion.div>
             ))}
