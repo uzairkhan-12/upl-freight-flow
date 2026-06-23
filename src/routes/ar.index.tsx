@@ -72,15 +72,15 @@ function HomeAr() {
       {/* QUICK ACTIONS + STATS */}
       <section className="relative overflow-hidden bg-secondary pb-24 pt-16">
         <div className="pointer-events-none absolute inset-0">
-          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
-          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/10 blur-3xl" />
+          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
         </div>
         <div className="container-x relative space-y-16">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-elevated)] md:p-12">
-            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/5 blur-3xl" />
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-soft)] md:p-12">
+            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
             <div className="relative">
-              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl">
+              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-foreground md:text-4xl">
                 كل احتياجاتك في الشحن، بين يديك.
               </motion.h2>
               <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
