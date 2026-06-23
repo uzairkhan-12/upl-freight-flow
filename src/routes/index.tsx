@@ -5,6 +5,7 @@ import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck,
 import heroPort from "@/assets/hero-port.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
+import fleetRiyadh from "@/assets/fleet-riyadh.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import airFreight from "@/assets/air-freight.jpg";
 
@@ -255,81 +256,79 @@ function Home() {
       </section>
 
       {/* INDUSTRIES STRIP */}
-      <section className="bg-secondary">
-        <div className="container-x section-pad">
-          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-[var(--shadow-elevated)] lg:rounded-[2.5rem]">
-            <div className="grid lg:grid-cols-2">
-              {/* Image half */}
-              <motion.div
-                initial={{ opacity: 0, scale: 1.05 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="relative min-h-[340px] overflow-hidden lg:min-h-full"
-              >
+      <section className="overflow-hidden bg-secondary">
+        <div className="grid min-h-[560px] lg:grid-cols-2 lg:min-h-[640px]">
+          {/* Image half - full edge-to-edge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative min-h-[320px] overflow-hidden lg:min-h-full"
+          >
                 <img
-                  src={fleet}
-                  alt="UPL fleet at a logistics hub"
+                  src={fleetRiyadh}
+                  alt="UPL trucks on a highway with the Riyadh skyline"
                   loading="lazy"
+                  width={1200}
+                  height={800}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-[var(--navy-deep)]/10" />
-              </motion.div>
+            <div className="absolute inset-0 bg-[var(--navy-deep)]/10" />
+          </motion.div>
 
-              {/* Content half */}
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={stagger}
-                className="flex flex-col justify-center bg-[var(--secondary)]/50 p-8 sm:p-12 lg:p-16"
+          {/* Content half */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={stagger}
+            className="flex flex-col justify-center px-6 py-16 sm:px-12 lg:px-16 xl:px-24"
+          >
+            <div className="max-w-xl">
+              <motion.span
+                variants={fadeUp}
+                className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]"
               >
-                <div className="max-w-xl">
-                  <motion.span
-                    variants={fadeUp}
-                    className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]"
-                  >
-                    Industries
-                  </motion.span>
-                  <motion.h2
-                    variants={fadeUp}
-                    className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
-                  >
-                    Trusted across every sector <span className="text-accent">that moves.</span>
-                  </motion.h2>
+                Industries
+              </motion.span>
+              <motion.h2
+                variants={fadeUp}
+                className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+              >
+                Trusted across every sector <span className="text-accent">that moves.</span>
+              </motion.h2>
 
+              <motion.div
+                variants={stagger}
+                className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2"
+              >
+                {[
+                  { icon: ShoppingBag, label: "E-commerce" },
+                  { icon: ShoppingCart, label: "Retail" },
+                  { icon: HeartPulse, label: "Healthcare" },
+                  { icon: Zap, label: "Automotive" },
+                  { icon: CreditCard, label: "Banking & Cards" },
+                  { icon: Landmark, label: "Government" },
+                  { icon: Monitor, label: "Technology" },
+                  { icon: Factory, label: "Manufacturing" },
+                ].map(({ icon: Icon, label }) => (
                   <motion.div
-                    variants={stagger}
-                    className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2"
+                    key={label}
+                    variants={fadeUp}
+                    whileHover={{ y: -4 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]"
                   >
-                    {[
-                      { icon: ShoppingBag, label: "E-commerce" },
-                      { icon: ShoppingCart, label: "Retail" },
-                      { icon: HeartPulse, label: "Healthcare" },
-                      { icon: Zap, label: "Automotive" },
-                      { icon: CreditCard, label: "Banking & Cards" },
-                      { icon: Landmark, label: "Government" },
-                      { icon: Monitor, label: "Technology" },
-                      { icon: Factory, label: "Manufacturing" },
-                    ].map(({ icon: Icon, label }) => (
-                      <motion.div
-                        key={label}
-                        variants={fadeUp}
-                        whileHover={{ y: -4 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]"
-                      >
-                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
-                          <Icon className="h-5 w-5" />
-                        </span>
-                        <span className="text-sm font-semibold text-foreground">{label}</span>
-                      </motion.div>
-                    ))}
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">{label}</span>
                   </motion.div>
-                </div>
+                ))}
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
