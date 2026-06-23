@@ -218,10 +218,10 @@ function HomeAr() {
 
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="flex flex-col justify-center px-6 py-16 sm:px-12 lg:px-16 xl:px-24">
             <div className="max-w-xl">
-              <motion.span variants={fadeUp} className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]">
+              <motion.span variants={fadeUp} className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
                 القطاعات
               </motion.span>
-              <motion.h2 variants={fadeUp} className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.3]">
+              <motion.h2 variants={fadeUp} className="mt-6 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.3]">
                 نخدم كل القطاعات <span className="text-accent">التي تتحرّك.</span>
               </motion.h2>
 
@@ -236,8 +236,8 @@ function HomeAr() {
                   { icon: Monitor, label: "التكنولوجيا" },
                   { icon: Factory, label: "التصنيع" },
                 ].map(({ icon: Icon, label }) => (
-                  <motion.div key={label} variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                  <motion.div key={label} variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-soft)]">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="text-sm font-semibold text-foreground">{label}</span>
