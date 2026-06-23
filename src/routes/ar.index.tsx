@@ -157,12 +157,12 @@ function HomeAr() {
       </section>
 
       {/* FEATURE SPLIT */}
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x grid gap-12 py-20 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">من البداية للنهاية</p>
-            <h2 className="mt-2 font-display text-3xl font-bold md:text-5xl">من المستودع إلى باب العميل، بلا انقطاع.</h2>
-            <p className="mt-6 text-white/75">
+            <h2 className="mt-2 font-display text-3xl font-bold text-foreground md:text-5xl">من المستودع إلى باب العميل، بلا انقطاع.</h2>
+            <p className="mt-6 text-muted-foreground">
               من استلام البضاعة إلى التسليم النهائي، UPL تدمج كل خطوة لتنمو بذكاء وتصل لعملائك أسرع. تخزين جمركي، ومخزون لحظي، وشبكة تنفيذ إقليمية مصممة للتجارة الإلكترونية والتجزئة والأعمال.
             </p>
             <ul className="mt-8 grid gap-3 text-sm">
