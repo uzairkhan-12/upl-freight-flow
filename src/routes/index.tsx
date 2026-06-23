@@ -53,7 +53,7 @@ function Home() {
           <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.25em] text-accent">United Parcel Logistics</motion.p>
             <motion.h1 variants={fadeUp} className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] md:text-6xl lg:text-7xl">
-              Your cargo, <span className="text-accent">in motion</span> — across every border.
+              Your cargo, <span className="text-accent">in <TypewriterText text="motion" /></span> — across every border.
             </motion.h1>
             <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg text-white/85">
               Air, ocean, road and warehousing built into one platform. Move faster,
