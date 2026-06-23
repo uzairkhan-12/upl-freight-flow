@@ -382,14 +382,14 @@ function Home() {
       {/* CTA */}
       <section className="section-pad">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl bg-[var(--navy-deep)] p-10 text-white md:p-16">
-            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-secondary p-10 md:p-16">
+            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 className="font-display text-3xl font-bold md:text-5xl">Ready to move?</h2>
-              <p className="mt-4 text-white/80">Tell us where your cargo needs to go. Our specialists will design a lane in 24 hours.</p>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">Ready to move?</h2>
+              <p className="mt-4 text-muted-foreground">Tell us where your cargo needs to go. Our specialists will design a lane in 24 hours.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/contact" className="btn-primary btn-primary-hover">Get a quote</Link>
-                <Link to="/track" className="btn-ghost border-white/30 text-white hover:bg-white/10">Track a shipment</Link>
+                <Link to="/track" className="btn-ghost text-foreground hover:bg-background">Track a shipment</Link>
               </div>
             </div>
           </div>
