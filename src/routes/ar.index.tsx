@@ -280,14 +280,14 @@ function HomeAr() {
       {/* CTA */}
       <section className="section-pad">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl bg-[var(--navy-deep)] p-10 text-white md:p-16">
-            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-secondary p-10 md:p-16">
+            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 className="font-display text-3xl font-bold md:text-5xl">جاهز للانطلاق؟</h2>
-              <p className="mt-4 text-white/80">أخبرنا إلى أين تريد شحنتك، وسيصمم متخصصونا المسار المناسب خلال 24 ساعة.</p>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">جاهز للانطلاق؟</h2>
+              <p className="mt-4 text-muted-foreground">أخبرنا إلى أين تريد شحنتك، وسيصمم متخصصونا المسار المناسب خلال 24 ساعة.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/ar/contact" className="btn-primary btn-primary-hover">احصل على عرض سعر</Link>
-                <Link to="/ar/track" className="btn-ghost border-white/30 text-white hover:bg-white/10">تتبع شحنة</Link>
+                <Link to="/ar/track" className="btn-ghost text-foreground hover:bg-background">تتبع شحنة</Link>
               </div>
             </div>
           </div>
