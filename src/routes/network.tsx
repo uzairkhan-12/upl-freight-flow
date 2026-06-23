@@ -25,11 +25,11 @@ export const Route = createFileRoute("/network")({
 function Network() {
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-24 md:py-32">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Global Network</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-6xl">120+ countries. One operating standard.</h1>
-          <p className="mt-6 max-w-2xl text-white/80">A network of hubs, gateways and partner stations engineered for resilience — built so your cargo always has a route forward.</p>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-6xl">120+ countries. One operating standard.</h1>
+          <p className="mt-6 max-w-2xl text-muted-foreground">A network of hubs, gateways and partner stations engineered for resilience — built so your cargo always has a route forward.</p>
         </div>
       </section>
 
