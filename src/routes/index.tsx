@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
-import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset, Percent, UserPlus, MapPin } from "lucide-react";
+import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset, Percent, UserPlus, MapPin, ShoppingBag, ShoppingCart, HeartPulse, Zap, CreditCard, Landmark, Monitor, Factory } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
@@ -257,19 +257,78 @@ function Home() {
       {/* INDUSTRIES STRIP */}
       <section className="bg-secondary">
         <div className="container-x section-pad">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-accent">Industries</p>
-              <h2 className="mt-2 max-w-xl font-display text-3xl font-bold md:text-4xl">Trusted across every sector that moves.</h2>
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-white shadow-[var(--shadow-elevated)] lg:rounded-[2.5rem]">
+            <div className="grid lg:grid-cols-2">
+              {/* Image half */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1.05 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="relative min-h-[340px] overflow-hidden lg:min-h-full"
+              >
+                <img
+                  src={fleet}
+                  alt="UPL fleet at a logistics hub"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[var(--navy-deep)]/10" />
+              </motion.div>
+
+              {/* Content half */}
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={stagger}
+                className="flex flex-col justify-center bg-[var(--secondary)]/50 p-8 sm:p-12 lg:p-16"
+              >
+                <div className="max-w-xl">
+                  <motion.span
+                    variants={fadeUp}
+                    className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]"
+                  >
+                    Industries
+                  </motion.span>
+                  <motion.h2
+                    variants={fadeUp}
+                    className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+                  >
+                    Trusted across every sector <span className="text-accent">that moves.</span>
+                  </motion.h2>
+
+                  <motion.div
+                    variants={stagger}
+                    className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2"
+                  >
+                    {[
+                      { icon: ShoppingBag, label: "E-commerce" },
+                      { icon: ShoppingCart, label: "Retail" },
+                      { icon: HeartPulse, label: "Healthcare" },
+                      { icon: Zap, label: "Automotive" },
+                      { icon: CreditCard, label: "Banking & Cards" },
+                      { icon: Landmark, label: "Government" },
+                      { icon: Monitor, label: "Technology" },
+                      { icon: Factory, label: "Manufacturing" },
+                    ].map(({ icon: Icon, label }) => (
+                      <motion.div
+                        key={label}
+                        variants={fadeUp}
+                        whileHover={{ y: -4 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]"
+                      >
+                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                        <span className="text-sm font-semibold text-foreground">{label}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+              </motion.div>
             </div>
-            <div className="overflow-hidden rounded-2xl md:max-w-md">
-              <img src={fleet} alt="UPL fleet" loading="lazy" width={1600} height={1000} className="h-full w-full object-cover" />
-            </div>
-          </div>
-          <div className="mt-10 grid grid-cols-2 gap-3 text-sm md:grid-cols-4">
-            {["E-commerce", "Retail", "Healthcare", "Automotive", "Banking & Cards", "Government", "Technology", "Manufacturing"].map((i) => (
-              <div key={i} className="rounded-xl border border-border bg-card px-4 py-3 font-medium">{i}</div>
-            ))}
           </div>
         </div>
       </section>
