@@ -53,13 +53,13 @@ function TrackAr() {
       <section className="section-pad">
         <div className="container-x">
           {tracked ? (
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-10">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-sm text-muted-foreground">رقم التتبع</p>
                   <p className="font-display text-2xl font-semibold">{tracked}</p>
                 </div>
-                <span className="rounded-full bg-[var(--gradient-amber)] px-4 py-1.5 text-sm font-semibold text-navy-deep">في النقل</span>
+                <span className="rounded-full bg-[var(--gradient-amber)] px-4 py-1.5 text-sm font-semibold text-foreground">في النقل</span>
               </div>
               <ol className="mt-10 space-y-6">
                 {steps.map(({ icon: Icon, label, place, time }, i) => {
@@ -67,7 +67,7 @@ function TrackAr() {
                   const active = i === 3;
                   return (
                     <li key={label} className="flex items-start gap-5">
-                      <span className={`mt-0.5 grid h-11 w-11 flex-none place-items-center rounded-full border-2 ${done ? "border-accent bg-accent/10 text-accent" : active ? "border-accent bg-accent text-navy-deep" : "border-border bg-secondary text-muted-foreground"}`}>
+                      <span className={`mt-0.5 grid h-11 w-11 flex-none place-items-center rounded-full border-2 ${done ? "border-accent bg-accent/10 text-accent" : active ? "border-accent bg-accent text-foreground" : "border-border bg-secondary text-muted-foreground"}`}>
                         <Icon className="h-5 w-5" />
                       </span>
                       <div>
