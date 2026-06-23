@@ -48,30 +48,50 @@ function Contact() {
 
           <form
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)]"
+            className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-10"
           >
-            <h2 className="font-display text-2xl font-semibold">Request a quote</h2>
-            <p className="mt-2 text-sm text-muted-foreground">We'll respond within 24 hours.</p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="flex items-center gap-3">
+              <span className="h-8 w-1 rounded-full bg-[var(--gradient-amber)]" />
+              <h2 className="font-display text-2xl font-semibold md:text-3xl">Request a quote</h2>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">Fill in the form and our team will respond within 24 hours.</p>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
               {[
-                ["name", "Full name"],
-                ["company", "Company"],
-                ["email", "Work email"],
-                ["phone", "Phone"],
-              ].map(([n, l]) => (
-                <label key={n} className="block text-sm">
-                  <span className="text-foreground">{l}</span>
-                  <input required name={n} className="mt-1 h-11 w-full rounded-lg border border-input bg-background px-3 outline-none focus:border-accent" />
+                ["name", "Full name", "Jane Doe", "text"],
+                ["company", "Company", "Acme Logistics", "text"],
+                ["email", "Work email", "jane@acme.com", "email"],
+                ["phone", "Phone", "+971 50 000 0000", "tel"],
+              ].map(([n, l, ph, type]) => (
+                <label key={n} className="block">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{l}</span>
+                  <input
+                    required
+                    type={type}
+                    name={n}
+                    placeholder={ph}
+                    className="mt-2 h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground outline-none transition placeholder:text-muted-foreground/60 focus:border-accent focus:ring-2 focus:ring-accent/20"
+                  />
                 </label>
               ))}
-              <label className="block text-sm md:col-span-2">
-                <span className="text-foreground">Tell us about your shipment</span>
-                <textarea required name="message" rows={4} className="mt-1 w-full rounded-lg border border-input bg-background p-3 outline-none focus:border-accent" />
+              <label className="block md:col-span-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tell us about your shipment</span>
+                <textarea
+                  required
+                  name="message"
+                  rows={5}
+                  placeholder="Origin, destination, cargo type, weight, timing…"
+                  className="mt-2 w-full resize-none rounded-xl border border-input bg-background p-4 text-sm text-foreground outline-none transition placeholder:text-muted-foreground/60 focus:border-accent focus:ring-2 focus:ring-accent/20"
+                />
               </label>
             </div>
-            <button type="submit" className="btn-primary btn-primary-hover mt-6">
-              {sent ? "Thanks — we'll be in touch" : (<>Send message <Send className="h-4 w-4" /></>)}
-            </button>
+
+            <div className="mt-8 flex flex-col items-start gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+              <p className="text-xs text-muted-foreground">By submitting, you agree to our privacy policy.</p>
+              <button type="submit" className="btn-primary btn-primary-hover w-full md:w-auto" disabled={sent}>
+                {sent ? "Thanks — we'll be in touch" : (<>Send message <Send className="h-4 w-4" /></>)}
+              </button>
+            </div>
           </form>
         </div>
       </section>
