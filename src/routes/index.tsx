@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
+import { TypewriterText } from "@/components/site/TypewriterText";
 import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset, Percent, UserPlus, MapPin, ShoppingBag, ShoppingCart, HeartPulse, Zap, CreditCard, Landmark, Monitor, Factory } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
