@@ -73,8 +73,8 @@ function Home() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn-primary btn-primary-hover">Request a quote <ArrowRight className="h-4 w-4" /></Link>
               <Link to="/services" className="btn-ghost border-white/30 text-white hover:bg-white/10">Explore services</Link>
-              <Link to="/contact" className="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Request a quote →</Link>
             </motion.div>
           </motion.div>
         </div>
