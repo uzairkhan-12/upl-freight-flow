@@ -82,19 +82,25 @@ function Home() {
 
       {/* STATS */}
       <section className="border-b border-border bg-secondary">
-        <div className="container-x grid grid-cols-2 gap-8 py-12 md:grid-cols-4">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={stagger}
+          className="container-x grid grid-cols-2 gap-8 py-12 md:grid-cols-4"
+        >
           {[
             ["120+", "Countries served"],
             ["3.2M", "Shipments / year"],
             ["98.7%", "On-time delivery"],
             ["24/7", "Operations support"],
           ].map(([n, l]) => (
-            <div key={l}>
+            <motion.div key={l} variants={fadeUp}>
               <div className="font-display text-3xl font-bold text-foreground md:text-4xl">{n}</div>
               <div className="mt-1 text-sm text-muted-foreground">{l}</div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* SERVICES */}
@@ -108,23 +114,31 @@ function Home() {
             <Link to="/services" className="hidden text-sm font-medium text-foreground hover:text-accent md:inline-flex">All services →</Link>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={stagger}
+            className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          >
             {[
               { icon: Plane, title: "Air Freight", desc: "Express, consolidated and chartered air cargo with priority routing." },
               { icon: Ship, title: "Ocean Freight", desc: "FCL, LCL and project cargo across all major shipping lanes." },
               { icon: Truck, title: "Road Transport", desc: "Cross-border trucking and regional last-mile delivery fleets." },
               { icon: Warehouse, title: "Warehousing", desc: "Bonded storage, fulfilment and inventory tech at strategic hubs." },
             ].map(({ icon: Icon, title, desc }) => (
-              <Link to="/services" key={title} className="group rounded-2xl border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-accent hover:shadow-[var(--shadow-elevated)]">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-                <span className="mt-5 inline-flex items-center text-sm font-medium text-accent">Learn more <ArrowRight className="ml-1 h-4 w-4" /></span>
-              </Link>
+              <motion.div key={title} variants={fadeUp} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+                <Link to="/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+                  <span className="mt-5 inline-flex items-center text-sm font-medium text-accent">Learn more <ArrowRight className="ml-1 h-4 w-4" /></span>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
