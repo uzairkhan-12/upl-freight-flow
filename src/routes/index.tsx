@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3 } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
@@ -6,6 +7,16 @@ import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import airFreight from "@/assets/air-freight.jpg";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,33 +48,35 @@ function Home() {
         />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-x relative py-28 md:py-40 text-white">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-accent">United Parcel Logistics</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] md:text-6xl lg:text-7xl">
-            Your cargo, <span className="text-accent">in motion</span> — across every border.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/85">
-            Air, ocean, road and warehousing built into one platform. Move faster,
-            see further, ship smarter with UPL.
-          </p>
+          <motion.div initial="hidden" animate="show" variants={stagger}>
+            <motion.p variants={fadeUp} className="text-sm font-medium uppercase tracking-[0.25em] text-accent">United Parcel Logistics</motion.p>
+            <motion.h1 variants={fadeUp} className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] md:text-6xl lg:text-7xl">
+              Your cargo, <span className="text-accent">in motion</span> — across every border.
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg text-white/85">
+              Air, ocean, road and warehousing built into one platform. Move faster,
+              see further, ship smarter with UPL.
+            </motion.p>
 
-          {/* Tracking card */}
-          <div className="mt-10 rounded-2xl bg-white/95 p-2 shadow-[var(--shadow-elevated)] backdrop-blur md:max-w-2xl">
-            <form
-              onSubmit={(e) => { e.preventDefault(); const f = new FormData(e.currentTarget); const id = (f.get("id") as string) || ""; if (id) window.location.assign(`/track?id=${encodeURIComponent(id)}`); }}
-              className="flex flex-col gap-2 md:flex-row"
-            >
-              <div className="flex flex-1 items-center gap-3 rounded-xl px-4">
-                <Search className="h-5 w-5 text-muted-foreground" />
-                <input name="id" placeholder="Enter your tracking number" className="h-12 w-full bg-transparent text-foreground outline-none placeholder:text-muted-foreground" />
-              </div>
-              <button className="btn-primary btn-primary-hover">Track <ArrowRight className="h-4 w-4" /></button>
-            </form>
-          </div>
+            {/* Tracking card */}
+            <motion.div variants={fadeUp} className="mt-10 rounded-2xl bg-white/95 p-2 shadow-[var(--shadow-elevated)] backdrop-blur md:max-w-2xl">
+              <form
+                onSubmit={(e) => { e.preventDefault(); const f = new FormData(e.currentTarget); const id = (f.get("id") as string) || ""; if (id) window.location.assign(`/track?id=${encodeURIComponent(id)}`); }}
+                className="flex flex-col gap-2 md:flex-row"
+              >
+                <div className="flex flex-1 items-center gap-3 rounded-xl px-4">
+                  <Search className="h-5 w-5 text-muted-foreground" />
+                  <input name="id" placeholder="Enter your tracking number" className="h-12 w-full bg-transparent text-foreground outline-none placeholder:text-muted-foreground" />
+                </div>
+                <button className="btn-primary btn-primary-hover">Track <ArrowRight className="h-4 w-4" /></button>
+              </form>
+            </motion.div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/services" className="btn-ghost border-white/30 text-white hover:bg-white/10">Explore services</Link>
-            <Link to="/contact" className="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Request a quote →</Link>
-          </div>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+              <Link to="/services" className="btn-ghost border-white/30 text-white hover:bg-white/10">Explore services</Link>
+              <Link to="/contact" className="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Request a quote →</Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
