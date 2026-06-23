@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Package, Globe } from "lucide-react";
+import { Menu, X, Package } from "lucide-react";
 import { useState } from "react";
 import { useIsArabic } from "@/lib/i18n";
 
