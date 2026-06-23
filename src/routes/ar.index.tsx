@@ -262,7 +262,7 @@ function HomeAr() {
               { date: "12 يوليو 2026", title: "خط مباشر جديد يربط جبل علي بمومباي في 96 ساعة", img: heroPort },
               { date: "2 يونيو 2026", title: "UPL الجوية توسّع التوصيل ذي الأولوية في 7 أسواق خليجية جديدة", img: airFreight },
             ].map((n) => (
-              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-elevated)]">
+              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img src={n.img} alt="" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
