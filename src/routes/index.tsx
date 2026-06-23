@@ -201,12 +201,12 @@ function Home() {
       </section>
 
       {/* FEATURE SPLIT */}
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x grid gap-12 py-20 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">End-to-end</p>
-            <h2 className="mt-2 font-display text-3xl font-bold md:text-5xl">Store to door, all the way through.</h2>
-            <p className="mt-6 text-white/75">
+            <h2 className="mt-2 font-display text-3xl font-bold text-foreground md:text-5xl">Store to door, all the way through.</h2>
+            <p className="mt-6 text-muted-foreground">
               From inbound receipt to last-mile dispatch, UPL integrates every step
               so you can scale smarter and reach customers faster. Bonded storage,
               real-time inventory, and a regional fulfilment network purpose-built
