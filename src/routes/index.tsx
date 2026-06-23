@@ -81,7 +81,13 @@ function Home() {
       </section>
 
       {/* QUICK ACTIONS */}
-      <section className="relative bg-[var(--navy-deep)] pb-20 pt-2">
+      <section className="relative overflow-hidden bg-secondary pb-24 pt-2">
+        <div className="pointer-events-none absolute inset-0">
+          <span className="absolute -left-12 top-24 h-48 w-48 rotate-12 rounded-[2rem] border-2 border-accent/20" />
+          <span className="absolute left-1/4 top-8 h-32 w-32 -rotate-12 rounded-3xl bg-accent/10 blur-sm" />
+          <span className="absolute right-12 top-20 h-56 w-56 -rotate-6 rounded-[2.5rem] border-2 border-[var(--navy-deep)]/10" />
+          <span className="absolute bottom-12 right-1/4 h-40 w-40 rotate-12 rounded-[2rem] bg-[var(--navy-deep)]/5" />
+        </div>
         <div className="container-x relative -mt-16">
           <motion.div
             initial="hidden"
