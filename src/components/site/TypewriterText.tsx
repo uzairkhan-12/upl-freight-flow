@@ -53,14 +53,17 @@ export function TypewriterText({
   }, [text, revealed, dots, phase, speed, dotSpeed, loop]);
 
   return (
-    <span className={`inline-block whitespace-nowrap ${className}`}>
-      {text.slice(0, revealed)}
-      <span className="inline-block w-[1ch] text-center">
-        {".".repeat(dots)}
-        <span className="inline-block w-0 overflow-hidden align-bottom">
-          {".".repeat(3 - dots)}
+    <>
+      <span aria-hidden className={`inline-block whitespace-nowrap ${className}`}>
+        {text.slice(0, revealed)}
+        <span className="inline-block w-[1ch] text-center">
+          {".".repeat(dots)}
+          <span className="inline-block w-0 overflow-hidden align-bottom">
+            {".".repeat(3 - dots)}
+          </span>
         </span>
       </span>
-    </span>
+      <span className="sr-only">{text}</span>
+    </>
   );
 }
