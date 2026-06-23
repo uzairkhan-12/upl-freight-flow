@@ -84,8 +84,8 @@ function Home() {
       {/* QUICK ACTIONS + STATS */}
       <section className="relative overflow-hidden bg-secondary pb-24 pt-16">
         <div className="pointer-events-none absolute inset-0">
-          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
-          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/10 blur-3xl" />
+          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
         </div>
         <div className="container-x relative space-y-16">
           <motion.div
