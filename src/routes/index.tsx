@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
-import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset } from "lucide-react";
+import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset, Percent, UserPlus, MapPin } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
@@ -76,6 +76,45 @@ function Home() {
               <Link to="/services" className="btn-ghost border-white/30 text-white hover:bg-white/10">Explore services</Link>
               <Link to="/contact" className="text-sm font-medium text-white/85 underline-offset-4 hover:underline">Request a quote →</Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* QUICK ACTIONS */}
+      <section className="relative bg-[var(--navy-deep)] pb-20 pt-2">
+        <div className="container-x relative -mt-16">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={stagger}
+            className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-12"
+          >
+            <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold text-[var(--navy-deep)] md:text-4xl">
+              Your shipping needs, within reach.
+            </motion.h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3 md:grid-cols-5">
+              {[
+                { icon: Percent, label: "Get Rates" },
+                { icon: Search, label: "Track" },
+                { icon: Package, label: "Send Shipment" },
+                { icon: UserPlus, label: "Sign up for a corporate account" },
+                { icon: MapPin, label: "Find Us" },
+              ].map(({ icon: Icon, label }, i, arr) => (
+                <motion.div
+                  key={label}
+                  variants={fadeUp}
+                  className={`relative flex flex-col items-center gap-4 text-center ${i < arr.length - 1 ? "md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-12 md:after:w-px md:after:-translate-y-1/2 md:after:bg-border" : ""}`}
+                >
+                  <Link to={label === "Track" ? "/track" : label === "Find Us" ? "/network" : label === "Get Rates" ? "/contact" : label === "Send Shipment" ? "/contact" : "/contact"} className="group flex flex-col items-center gap-4">
+                    <span className="grid h-16 w-16 place-items-center rounded-full bg-[var(--navy-deep)] text-white transition group-hover:scale-110 group-hover:bg-accent group-hover:text-[var(--navy-deep)]">
+                      <Icon className="h-7 w-7" />
+                    </span>
+                    <span className="max-w-[10rem] text-sm font-semibold text-foreground">{label}</span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
