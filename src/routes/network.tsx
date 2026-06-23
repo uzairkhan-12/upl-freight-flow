@@ -3,7 +3,7 @@ import { Layout } from "@/components/site/Layout";
 import { MapPin } from "lucide-react";
 
 const regions = [
-  { name: "Middle East", hubs: ["Dubai (HQ)", "Riyadh", "Doha", "Kuwait City", "Muscat", "Manama"] },
+  { name: "Middle East", hubs: ["Riyadh (HQ)", "Dubai", "Doha", "Kuwait City", "Muscat", "Manama"] },
   { name: "Asia Pacific", hubs: ["Singapore", "Mumbai", "Hong Kong", "Shanghai", "Jakarta", "Bangkok"] },
   { name: "Europe", hubs: ["London", "Frankfurt", "Rotterdam", "Madrid", "Istanbul", "Milan"] },
   { name: "Africa", hubs: ["Cairo", "Nairobi", "Lagos", "Johannesburg", "Casablanca"] },
@@ -49,6 +49,24 @@ function Network() {
       </section>
 
       <section className="section-pad bg-secondary">
+        <div className="container-x">
+          <div className="rounded-3xl border border-border bg-card p-2 shadow-[var(--shadow-elevated)]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626583.034543834!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1719000000000!5m2!1sen!2sus"
+              width="100%"
+              height="480"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="UPL headquarters map"
+              className="rounded-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad">
         <div className="container-x grid gap-8 md:grid-cols-4 text-center">
           {[["50+", "Owned hubs"], ["220", "Partner stations"], ["10,000+", "Vehicles"], ["1.4M", "Sqft warehousing"]].map(([n, l]) => (
             <div key={l}>

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/track")({
 });
 
 const steps = [
-  { icon: PackageCheck, label: "Picked up", place: "Dubai, UAE", time: "Mon · 09:14" },
+  { icon: PackageCheck, label: "Picked up", place: "Riyadh, KSA", time: "Mon · 09:14" },
   { icon: Warehouse, label: "At UPL hub", place: "Jebel Ali Gateway", time: "Mon · 17:42" },
   { icon: Plane, label: "In transit", place: "DXB → LHR", time: "Tue · 02:10" },
   { icon: Truck, label: "Out for delivery", place: "London, UK", time: "Wed · 08:55" },

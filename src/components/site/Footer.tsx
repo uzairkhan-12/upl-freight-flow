@@ -45,8 +45,8 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h4>
           <ul className="mt-4 space-y-3 text-sm">
-            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" />Marrakech St, Al Garhoud, Dubai, UAE</li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-accent" />+971 600 51 3333</li>
+            <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" />King Fahd Road, Riyadh, KSA</li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-accent" />+966 11 510 3333</li>
             <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" />hello@upl.com</li>
           </ul>
         </div>

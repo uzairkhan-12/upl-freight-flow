@@ -31,7 +31,7 @@ function Contact() {
           <div className="space-y-8">
             {[
               { icon: MapPin, t: "Headquarters", d: "Riyadh\nKSA" },
-              { icon: Phone, t: "Call us", d: "+971 600 51 3333\nMon–Sun, 24/7 dispatch" },
+              { icon: Phone, t: "Call us", d: "+966 11 510 3333\nMon–Sun, 24/7 dispatch" },
               { icon: Mail, t: "Email", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-5">
@@ -61,7 +61,7 @@ function Contact() {
                 ["name", "Full name", "Jane Doe", "text"],
                 ["company", "Company", "Acme Logistics", "text"],
                 ["email", "Work email", "jane@acme.com", "email"],
-                ["phone", "Phone", "+971 50 000 0000", "tel"],
+                ["phone", "Phone", "+966 50 000 0000", "tel"],
               ].map(([n, l, ph, type]) => (
                 <label key={n} className="block">
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{l}</span>
