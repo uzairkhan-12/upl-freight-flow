@@ -111,7 +111,7 @@ function HomeAr() {
               { icon: Timer, value: "98.7%", label: "التزام بالمواعيد", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "دعم العمليات", color: "bg-rose-50 text-rose-600" },
             ].map(({ icon: Icon, value, label, color }) => (
-              <motion.div key={label} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-soft)]">
+              <motion.div key={label} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="card-sheen rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-amber)]">
                 <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
                   <Icon className="h-6 w-6" />
                 </span>
