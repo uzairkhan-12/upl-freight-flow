@@ -19,10 +19,10 @@ function ContactAr() {
   const [sent, setSent] = useState(false);
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-24">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">تواصل</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-6xl">لنُحرّك شيئاً ما معاً.</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-6xl">لنُحرّك شيئاً ما معاً.</h1>
         </div>
       </section>
 
@@ -35,21 +35,21 @@ function ContactAr() {
               { icon: Mail, t: "البريد الإلكتروني", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-5">
-                <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-navy-deep">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold">{t}</h3>
-                  <p className="mt-1 whitespace-pre-line text-muted-foreground">{d}</p>
-                </div>
+              <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-foreground">
+                <Icon className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-semibold">{t}</h3>
+                <p className="mt-1 whitespace-pre-line text-muted-foreground">{d}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-10"
-          >
+        <form
+          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+          className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+        >
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--gradient-amber)]" />
               <h2 className="font-display text-2xl font-semibold md:text-3xl">اطلب عرض سعر</h2>

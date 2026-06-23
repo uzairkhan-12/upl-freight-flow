@@ -18,12 +18,12 @@ export const Route = createFileRoute("/ar/about")({
 function AboutAr() {
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x grid gap-12 py-24 md:grid-cols-2 md:items-center md:py-32">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">عن UPL</p>
-            <h1 className="mt-4 font-display text-4xl font-bold md:text-6xl">نُحرّك العالم منذ 1996.</h1>
-            <p className="mt-6 text-white/80">
+            <h1 className="mt-4 font-display text-4xl font-bold text-foreground md:text-6xl">نُحرّك العالم منذ 1996.</h1>
+            <p className="mt-6 text-muted-foreground">
               تأسست UPL على فكرة بسيطة: الشركات تستحق شريكاً لوجستياً يفكر بطريقتها. وبعد ثلاثة عقود، نُشغّل واحدة من أكثر الشبكات موثوقية في المنطقة — نربط الموردين والمصانع والعملاء عبر أكثر من 120 دولة بنفس الاهتمام بالتفاصيل.
             </p>
           </div>

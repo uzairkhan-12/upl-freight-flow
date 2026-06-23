@@ -47,11 +47,11 @@ export function Footer() {
       };
 
   return (
-    <footer className="bg-[var(--navy-deep)] text-white/80">
+    <footer className="bg-secondary text-muted-foreground">
       <div className="container-x section-pad grid gap-12 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 text-xl font-bold text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-[var(--gradient-amber)] text-navy-deep">
+          <div className="flex items-center gap-2 text-xl font-bold text-foreground">
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-[var(--gradient-amber)] text-foreground">
               <Package className="h-5 w-5" />
             </span>
             UPL<span className="text-accent">.</span>
@@ -59,14 +59,14 @@ export function Footer() {
           <p className="mt-4 text-sm leading-relaxed">{t.tagline}</p>
           <div className="mt-6 flex gap-3">
             {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
-              <a key={i} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-white/15 transition hover:border-accent hover:text-accent">
+              <a key={i} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-border transition hover:border-accent hover:text-accent">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
           </div>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">{t.company}</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">{t.company}</h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link to={p("/about")} className="hover:text-accent">{t.links.about}</Link></li>
             <li><Link to={p("/network")} className="hover:text-accent">{t.links.network}</Link></li>
@@ -75,7 +75,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">{t.services}</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">{t.services}</h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link to={p("/services")} className="hover:text-accent">{t.links.air}</Link></li>
             <li><Link to={p("/services")} className="hover:text-accent">{t.links.ocean}</Link></li>
@@ -84,7 +84,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white">{t.contact}</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">{t.contact}</h4>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" />{t.address}</li>
             <li className="flex gap-2" dir="ltr"><Phone className="h-4 w-4 mt-0.5 text-accent" />+966 11 510 3333</li>
@@ -92,8 +92,8 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/50 md:flex-row">
+      <div className="border-t border-border">
+        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-muted-foreground md:flex-row">
           <p>{t.rights.replace("{year}", String(new Date().getFullYear()))}</p>
           <p>{t.legal}</p>
         </div>

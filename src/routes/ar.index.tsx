@@ -72,15 +72,15 @@ function HomeAr() {
       {/* QUICK ACTIONS + STATS */}
       <section className="relative overflow-hidden bg-secondary pb-24 pt-16">
         <div className="pointer-events-none absolute inset-0">
-          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
-          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/10 blur-3xl" />
+          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
         </div>
         <div className="container-x relative space-y-16">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-elevated)] md:p-12">
-            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/5 blur-3xl" />
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-soft)] md:p-12">
+            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
             <div className="relative">
-              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl">
+              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-foreground md:text-4xl">
                 كل احتياجاتك في الشحن، بين يديك.
               </motion.h2>
               <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
@@ -93,10 +93,10 @@ function HomeAr() {
                 ].map(({ icon: Icon, label, to, accent }) => (
                   <motion.div key={label} variants={fadeUp} className="flex flex-col items-center text-center">
                     <Link to={to} className="group flex flex-col items-center gap-4">
-                      <span className={`grid h-16 w-16 place-items-center rounded-2xl text-white shadow-lg transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-[var(--navy-deep)] shadow-[var(--shadow-amber)]" : "bg-[var(--navy-deep)] shadow-[var(--shadow-elevated)]"}`}>
+                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-foreground shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
                         <Icon className="h-7 w-7" />
                       </span>
-                      <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-[var(--navy-deep)]">{label}</span>
+                      <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-accent">{label}</span>
                     </Link>
                   </motion.div>
                 ))}
@@ -111,7 +111,7 @@ function HomeAr() {
               { icon: Timer, value: "98.7%", label: "التزام بالمواعيد", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "دعم العمليات", color: "bg-rose-50 text-rose-600" },
             ].map(({ icon: Icon, value, label, color }) => (
-              <motion.div key={label} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
+              <motion.div key={label} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-soft)]">
                 <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
                   <Icon className="h-6 w-6" />
                 </span>
@@ -142,8 +142,8 @@ function HomeAr() {
               { icon: Warehouse, title: "التخزين", desc: "مستودعات جمركية وحلول تنفيذ وتقنيات مخزون في مراكز استراتيجية." },
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
-                <Link to="/ar/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
+                <Link to="/ar/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-soft)]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
@@ -157,12 +157,12 @@ function HomeAr() {
       </section>
 
       {/* FEATURE SPLIT */}
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x grid gap-12 py-20 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">من البداية للنهاية</p>
-            <h2 className="mt-2 font-display text-3xl font-bold md:text-5xl">من المستودع إلى باب العميل، بلا انقطاع.</h2>
-            <p className="mt-6 text-white/75">
+            <h2 className="mt-2 font-display text-3xl font-bold text-foreground md:text-5xl">من المستودع إلى باب العميل، بلا انقطاع.</h2>
+            <p className="mt-6 text-muted-foreground">
               من استلام البضاعة إلى التسليم النهائي، UPL تدمج كل خطوة لتنمو بذكاء وتصل لعملائك أسرع. تخزين جمركي، ومخزون لحظي، وشبكة تنفيذ إقليمية مصممة للتجارة الإلكترونية والتجزئة والأعمال.
             </p>
             <ul className="mt-8 grid gap-3 text-sm">
@@ -218,10 +218,10 @@ function HomeAr() {
 
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="flex flex-col justify-center px-6 py-16 sm:px-12 lg:px-16 xl:px-24">
             <div className="max-w-xl">
-              <motion.span variants={fadeUp} className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]">
+              <motion.span variants={fadeUp} className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
                 القطاعات
               </motion.span>
-              <motion.h2 variants={fadeUp} className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.3]">
+              <motion.h2 variants={fadeUp} className="mt-6 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.3]">
                 نخدم كل القطاعات <span className="text-accent">التي تتحرّك.</span>
               </motion.h2>
 
@@ -236,8 +236,8 @@ function HomeAr() {
                   { icon: Monitor, label: "التكنولوجيا" },
                   { icon: Factory, label: "التصنيع" },
                 ].map(({ icon: Icon, label }) => (
-                  <motion.div key={label} variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                  <motion.div key={label} variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-soft)]">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="text-sm font-semibold text-foreground">{label}</span>
@@ -262,7 +262,7 @@ function HomeAr() {
               { date: "12 يوليو 2026", title: "خط مباشر جديد يربط جبل علي بمومباي في 96 ساعة", img: heroPort },
               { date: "2 يونيو 2026", title: "UPL الجوية توسّع التوصيل ذي الأولوية في 7 أسواق خليجية جديدة", img: airFreight },
             ].map((n) => (
-              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-elevated)]">
+              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img src={n.img} alt="" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
@@ -280,14 +280,14 @@ function HomeAr() {
       {/* CTA */}
       <section className="section-pad">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl bg-[var(--navy-deep)] p-10 text-white md:p-16">
-            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-secondary p-10 md:p-16">
+            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 className="font-display text-3xl font-bold md:text-5xl">جاهز للانطلاق؟</h2>
-              <p className="mt-4 text-white/80">أخبرنا إلى أين تريد شحنتك، وسيصمم متخصصونا المسار المناسب خلال 24 ساعة.</p>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">جاهز للانطلاق؟</h2>
+              <p className="mt-4 text-muted-foreground">أخبرنا إلى أين تريد شحنتك، وسيصمم متخصصونا المسار المناسب خلال 24 ساعة.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/ar/contact" className="btn-primary btn-primary-hover">احصل على عرض سعر</Link>
-                <Link to="/ar/track" className="btn-ghost border-white/30 text-white hover:bg-white/10">تتبع شحنة</Link>
+                <Link to="/ar/track" className="btn-ghost text-foreground hover:bg-background">تتبع شحنة</Link>
               </div>
             </div>
           </div>

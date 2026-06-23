@@ -33,13 +33,13 @@ function Track() {
 
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Tracking</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-5xl">Where is your shipment?</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-5xl">Where is your shipment?</h1>
           <form
             onSubmit={(e) => { e.preventDefault(); setTracked(id || null); }}
-            className="mt-8 flex max-w-2xl flex-col gap-2 rounded-2xl bg-white/95 p-2 md:flex-row"
+            className="mt-8 flex max-w-2xl flex-col gap-2 rounded-2xl bg-card/95 p-2 shadow-[var(--shadow-soft)] md:flex-row"
           >
             <div className="flex flex-1 items-center gap-3 rounded-xl px-4">
               <Search className="h-5 w-5 text-muted-foreground" />
@@ -53,13 +53,13 @@ function Track() {
       <section className="section-pad">
         <div className="container-x">
           {tracked ? (
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-10">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <p className="text-sm text-muted-foreground">Tracking number</p>
                   <p className="font-display text-2xl font-semibold">{tracked}</p>
                 </div>
-                <span className="rounded-full bg-[var(--gradient-amber)] px-4 py-1.5 text-sm font-semibold text-navy-deep">In transit</span>
+                <span className="rounded-full bg-[var(--gradient-amber)] px-4 py-1.5 text-sm font-semibold text-foreground">In transit</span>
               </div>
               <ol className="mt-10 space-y-6">
                 {steps.map(({ icon: Icon, label, place, time }, i) => {
@@ -67,7 +67,7 @@ function Track() {
                   const active = i === 3;
                   return (
                     <li key={label} className="flex items-start gap-5">
-                      <span className={`mt-0.5 grid h-11 w-11 flex-none place-items-center rounded-full border-2 ${done ? "border-accent bg-accent/10 text-accent" : active ? "border-accent bg-accent text-navy-deep" : "border-border bg-secondary text-muted-foreground"}`}>
+                      <span className={`mt-0.5 grid h-11 w-11 flex-none place-items-center rounded-full border-2 ${done ? "border-accent bg-accent/10 text-accent" : active ? "border-accent bg-accent text-foreground" : "border-border bg-secondary text-muted-foreground"}`}>
                         <Icon className="h-5 w-5" />
                       </span>
                       <div>

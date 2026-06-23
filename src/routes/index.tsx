@@ -84,8 +84,8 @@ function Home() {
       {/* QUICK ACTIONS + STATS */}
       <section className="relative overflow-hidden bg-secondary pb-24 pt-16">
         <div className="pointer-events-none absolute inset-0">
-          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
-          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/10 blur-3xl" />
+          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
         </div>
         <div className="container-x relative space-y-16">
           <motion.div
@@ -93,12 +93,12 @@ function Home() {
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             variants={stagger}
-            className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-elevated)] md:p-12"
+            className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-soft)] md:p-12"
           >
-            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/5 blur-3xl" />
+            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
             <div className="relative">
-              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl">
+              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-foreground md:text-4xl">
                 Your shipping needs, within reach.
               </motion.h2>
               <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
@@ -118,10 +118,10 @@ function Home() {
                       to={label === "Track" ? "/track" : label === "Find Us" ? "/network" : "/contact"}
                       className="group flex flex-col items-center gap-4"
                     >
-                      <span className={`grid h-16 w-16 place-items-center rounded-2xl text-white shadow-lg transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-[var(--navy-deep)] shadow-[var(--shadow-amber)]" : "bg-[var(--navy-deep)] shadow-[var(--shadow-elevated)]"}`}>
+                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-foreground shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
                         <Icon className="h-7 w-7" />
                       </span>
-                      <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-[var(--navy-deep)]">{label}</span>
+                      <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-accent">{label}</span>
                     </Link>
                   </motion.div>
                 ))}
@@ -187,7 +187,7 @@ function Home() {
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
                 <Link to="/services" className="card-sheen group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-amber)]">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
@@ -201,12 +201,12 @@ function Home() {
       </section>
 
       {/* FEATURE SPLIT */}
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x grid gap-12 py-20 md:grid-cols-2 md:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">End-to-end</p>
-            <h2 className="mt-2 font-display text-3xl font-bold md:text-5xl">Store to door, all the way through.</h2>
-            <p className="mt-6 text-white/75">
+            <h2 className="mt-2 font-display text-3xl font-bold text-foreground md:text-5xl">Store to door, all the way through.</h2>
+            <p className="mt-6 text-muted-foreground">
               From inbound receipt to last-mile dispatch, UPL integrates every step
               so you can scale smarter and reach customers faster. Bonded storage,
               real-time inventory, and a regional fulfilment network purpose-built
@@ -262,10 +262,10 @@ function Home() {
                 transition={{ type: "spring", stiffness: 180, damping: 28 }}
                 className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-[var(--navy-deep)] group-hover:amber-pulse">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground group-hover:amber-pulse">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-[var(--navy-deep)]">{title}</h3>
+                <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-foreground">{title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
               </motion.div>
             ))}
@@ -307,13 +307,13 @@ function Home() {
             <div className="max-w-xl">
               <motion.span
                 variants={fadeUp}
-                className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]"
+                className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-foreground"
               >
                 Industries
               </motion.span>
               <motion.h2
                 variants={fadeUp}
-                className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+                className="mt-6 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
               >
                 Trusted across every sector <span className="text-accent">that moves.</span>
               </motion.h2>
@@ -337,9 +337,9 @@ function Home() {
                     variants={fadeUp}
                     whileHover={{ y: -4 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[var(--shadow-elevated)]"
+                    className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-soft)]"
                   >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-[var(--navy-deep)] transition-colors duration-300 group-hover:bg-[var(--navy-deep)] group-hover:text-accent">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="text-sm font-semibold text-foreground">{label}</span>
@@ -364,7 +364,7 @@ function Home() {
               { date: "12 Jul 2026", title: "New direct lane connects Jebel Ali to Mumbai in 96 hours", img: heroPort },
               { date: "02 Jun 2026", title: "UPL Air expands GCC priority delivery to 7 new markets", img: airFreight },
             ].map((n) => (
-              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-elevated)]">
+              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img src={n.img} alt="" loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
@@ -382,14 +382,14 @@ function Home() {
       {/* CTA */}
       <section className="section-pad">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-3xl bg-[var(--navy-deep)] p-10 text-white md:p-16">
-            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-secondary p-10 md:p-16">
+            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gradient-amber)] opacity-20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 className="font-display text-3xl font-bold md:text-5xl">Ready to move?</h2>
-              <p className="mt-4 text-white/80">Tell us where your cargo needs to go. Our specialists will design a lane in 24 hours.</p>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">Ready to move?</h2>
+              <p className="mt-4 text-muted-foreground">Tell us where your cargo needs to go. Our specialists will design a lane in 24 hours.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/contact" className="btn-primary btn-primary-hover">Get a quote</Link>
-                <Link to="/track" className="btn-ghost border-white/30 text-white hover:bg-white/10">Track a shipment</Link>
+                <Link to="/track" className="btn-ghost text-foreground hover:bg-background">Track a shipment</Link>
               </div>
             </div>
           </div>
