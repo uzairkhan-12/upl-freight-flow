@@ -35,21 +35,21 @@ function Contact() {
               { icon: Mail, t: "Email", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-5">
-                <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-navy-deep">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold">{t}</h3>
-                  <p className="mt-1 whitespace-pre-line text-muted-foreground">{d}</p>
-                </div>
+              <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-foreground">
+                <Icon className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-semibold">{t}</h3>
+                <p className="mt-1 whitespace-pre-line text-muted-foreground">{d}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-10"
-          >
+        <form
+          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+          className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+        >
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--gradient-amber)]" />
               <h2 className="font-display text-2xl font-semibold md:text-3xl">Request a quote</h2>
