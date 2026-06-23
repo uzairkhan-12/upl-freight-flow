@@ -307,13 +307,13 @@ function Home() {
             <div className="max-w-xl">
               <motion.span
                 variants={fadeUp}
-                className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[var(--navy-deep)]"
+                className="inline-flex items-center rounded-full bg-accent/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-foreground"
               >
                 Industries
               </motion.span>
               <motion.h2
                 variants={fadeUp}
-                className="mt-6 font-display text-3xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+                className="mt-6 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
               >
                 Trusted across every sector <span className="text-accent">that moves.</span>
               </motion.h2>
