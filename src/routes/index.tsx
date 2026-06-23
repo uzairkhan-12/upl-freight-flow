@@ -147,7 +147,7 @@ function Home() {
                 variants={fadeUp}
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]"
+                className="card-sheen rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
                 <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
                   <Icon className="h-6 w-6" />
