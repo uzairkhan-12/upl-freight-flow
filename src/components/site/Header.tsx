@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Package, Globe } from "lucide-react";
+import { Menu, X, Package } from "lucide-react";
 import { useState } from "react";
 import { useIsArabic } from "@/lib/i18n";
 
@@ -56,7 +56,7 @@ export function Header() {
             className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-muted-foreground transition hover:border-accent hover:text-foreground"
             aria-label={ar ? "Switch to English" : "التبديل إلى العربية"}
           >
-            <Globe className="h-3.5 w-3.5" />
+            <span className="text-base leading-none" aria-hidden="true">{ar ? "🇬🇧" : "🇸🇦"}</span>
             {toggleLabel}
           </Link>
           <Link to={trackHref} className="btn-primary btn-primary-hover text-sm">{trackLabel}</Link>
@@ -73,8 +73,8 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <Link to={toggleHref} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">
-              <Globe className="me-2 inline h-4 w-4" />
+            <Link to={toggleHref} onClick={() => setOpen(false)} className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted">
+              <span className="text-base leading-none" aria-hidden="true">{ar ? "🇬🇧" : "🇸🇦"}</span>
               {ar ? "English" : "العربية"}
             </Link>
             <Link to={trackHref} onClick={() => setOpen(false)} className="btn-primary mt-2 text-sm">{trackLabel}</Link>
