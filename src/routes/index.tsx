@@ -80,53 +80,54 @@ function Home() {
         </div>
       </section>
 
-      {/* QUICK ACTIONS */}
+      {/* QUICK ACTIONS + STATS */}
       <section className="relative overflow-hidden bg-secondary pb-24 pt-16">
-        <div className="pointer-events-none absolute inset-0 opacity-60">
-          <span className="absolute -left-8 top-16 h-40 w-40 rotate-12 rounded-[1.5rem] border border-accent/15" />
-          <span className="absolute right-1/3 top-12 h-24 w-24 -rotate-12 rounded-2xl bg-accent/5" />
-          <span className="absolute bottom-16 right-8 h-48 w-48 rotate-6 rounded-[2rem] border border-[var(--navy-deep)]/8" />
+        <div className="pointer-events-none absolute inset-0">
+          <span className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
+          <span className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/10 blur-3xl" />
         </div>
-        <div className="container-x relative">
+        <div className="container-x relative space-y-16">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             variants={stagger}
-            className="rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-elevated)] md:p-12"
+            className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-elevated)] md:p-12"
           >
-            <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold text-[var(--navy-deep)] md:text-4xl">
-              Your shipping needs, within reach.
-            </motion.h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3 md:grid-cols-5">
-              {[
-                { icon: Percent, label: "Get Rates" },
-                { icon: Search, label: "Track" },
-                { icon: Package, label: "Send Shipment" },
-                { icon: UserPlus, label: "Sign up for a corporate account" },
-                { icon: MapPin, label: "Find Us" },
-              ].map(({ icon: Icon, label }, i, arr) => (
-                <motion.div
-                  key={label}
-                  variants={fadeUp}
-                  className={`relative flex flex-col items-center gap-4 text-center ${i < arr.length - 1 ? "md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-12 md:after:w-px md:after:-translate-y-1/2 md:after:bg-border" : ""}`}
-                >
-                  <Link to={label === "Track" ? "/track" : label === "Find Us" ? "/network" : label === "Get Rates" ? "/contact" : label === "Send Shipment" ? "/contact" : "/contact"} className="group flex flex-col items-center gap-4">
-                    <span className="grid h-16 w-16 place-items-center rounded-full bg-[var(--navy-deep)] text-white transition group-hover:scale-110 group-hover:bg-accent group-hover:text-[var(--navy-deep)]">
-                      <Icon className="h-7 w-7" />
-                    </span>
-                    <span className="max-w-[10rem] text-sm font-semibold text-foreground">{label}</span>
-                  </Link>
-                </motion.div>
-              ))}
+            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/5 blur-3xl" />
+            <div className="relative">
+              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl">
+                Your shipping needs, within reach.
+              </motion.h2>
+              <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
+                {[
+                  { icon: Percent, label: "Get Rates", accent: true },
+                  { icon: Search, label: "Track", accent: false },
+                  { icon: Package, label: "Send Shipment", accent: false },
+                  { icon: UserPlus, label: "Sign up for a corporate account", accent: false },
+                  { icon: MapPin, label: "Find Us", accent: false },
+                ].map(({ icon: Icon, label, accent }) => (
+                  <motion.div
+                    key={label}
+                    variants={fadeUp}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <Link
+                      to={label === "Track" ? "/track" : label === "Find Us" ? "/network" : "/contact"}
+                      className="group flex flex-col items-center gap-4"
+                    >
+                      <span className={`grid h-16 w-16 place-items-center rounded-2xl text-white shadow-lg transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-[var(--navy-deep)] shadow-[var(--shadow-amber)]" : "bg-[var(--navy-deep)] shadow-[var(--shadow-elevated)]"}`}>
+                        <Icon className="h-7 w-7" />
+                      </span>
+                      <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-[var(--navy-deep)]">{label}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* STATS */}
-      <section className="section-pad bg-secondary">
-        <div className="container-x">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -135,7 +136,7 @@ function Home() {
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           >
             {[
-              { icon: Globe2, value: "120+", label: "Countries served", color: "bg-sky-50 text-sky-600" },
+              { icon: Globe2, value: "120+", label: "Countries served", color: "bg-blue-50 text-blue-600" },
               { icon: Package, value: "3.2M", label: "Shipments / year", color: "bg-amber-50 text-amber-600" },
               { icon: Timer, value: "98.7%", label: "On-time delivery", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "Operations support", color: "bg-rose-50 text-rose-600" },
@@ -145,18 +146,19 @@ function Home() {
                 variants={fadeUp}
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]"
+                className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]"
               >
-                <span className={`mx-auto grid h-14 w-14 place-items-center rounded-2xl ${color}`}>
-                  <Icon className="h-7 w-7" />
+                <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
+                  <Icon className="h-6 w-6" />
                 </span>
-                <div className="mt-5 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">{value}</div>
-                <div className="mt-2 text-sm font-medium text-muted-foreground">{label}</div>
+                <div className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">{value}</div>
+                <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section className="section-pad">
