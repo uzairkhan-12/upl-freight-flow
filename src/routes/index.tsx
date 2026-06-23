@@ -93,12 +93,12 @@ function Home() {
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             variants={stagger}
-            className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-elevated)] md:p-12"
+            className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-soft)] md:p-12"
           >
-            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[var(--navy-deep)]/5 blur-3xl" />
+            <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
             <div className="relative">
-              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-[var(--navy-deep)] md:text-4xl">
+              <motion.h2 variants={fadeUp} className="text-center font-display text-2xl font-bold tracking-tight text-foreground md:text-4xl">
                 Your shipping needs, within reach.
               </motion.h2>
               <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-5">
