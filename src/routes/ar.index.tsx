@@ -8,6 +8,9 @@ import fleetRiyadh from "@/assets/fleet-riyadh.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import airFreight from "@/assets/air-freight.jpg";
 
+const assetOrigin = "https://id-preview--93e295b6-128d-4984-9150-dad15f3bbf84.lovable.app";
+const heroVideoUrl = heroVideo.url.startsWith("http") ? heroVideo.url : `${assetOrigin}${heroVideo.url}`;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
@@ -36,7 +39,7 @@ function HomeAr() {
     <Layout>
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
-        <video src={heroVideo.url} poster={heroPort} autoPlay muted loop playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover" />
+        <video src={heroVideoUrl} poster={heroPort} autoPlay muted loop playsInline preload="auto" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="container-x relative py-28 md:py-40 text-white">
           <motion.div initial="hidden" animate="show" variants={stagger}>

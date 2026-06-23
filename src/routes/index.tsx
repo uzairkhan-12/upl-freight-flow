@@ -9,6 +9,9 @@ import fleetRiyadh from "@/assets/fleet-riyadh.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import airFreight from "@/assets/air-freight.jpg";
 
+const assetOrigin = "https://id-preview--93e295b6-128d-4984-9150-dad15f3bbf84.lovable.app";
+const heroVideoUrl = heroVideo.url.startsWith("http") ? heroVideo.url : `${assetOrigin}${heroVideo.url}`;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
@@ -38,7 +41,7 @@ function Home() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
         <video
-          src={heroVideo.url}
+          src={heroVideoUrl}
           poster={heroPort}
           autoPlay
           muted
