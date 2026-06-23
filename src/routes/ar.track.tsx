@@ -33,13 +33,13 @@ function TrackAr() {
 
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">التتبع</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-5xl">أين شحنتك الآن؟</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-5xl">أين شحنتك الآن؟</h1>
           <form
             onSubmit={(e) => { e.preventDefault(); setTracked(id || null); }}
-            className="mt-8 flex max-w-2xl flex-col gap-2 rounded-2xl bg-white/95 p-2 md:flex-row"
+            className="mt-8 flex max-w-2xl flex-col gap-2 rounded-2xl bg-card/95 p-2 shadow-[var(--shadow-soft)] md:flex-row"
           >
             <div className="flex flex-1 items-center gap-3 rounded-xl px-4">
               <Search className="h-5 w-5 text-muted-foreground" />

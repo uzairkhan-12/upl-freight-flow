@@ -19,10 +19,10 @@ function ContactAr() {
   const [sent, setSent] = useState(false);
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-24">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">تواصل</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-6xl">لنُحرّك شيئاً ما معاً.</h1>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-6xl">لنُحرّك شيئاً ما معاً.</h1>
         </div>
       </section>
 

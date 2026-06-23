@@ -25,11 +25,11 @@ export const Route = createFileRoute("/ar/network")({
 function NetworkAr() {
   return (
     <Layout>
-      <section className="bg-[var(--navy-deep)] text-white">
+      <section className="bg-secondary">
         <div className="container-x py-24 md:py-32">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">الشبكة العالمية</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold md:text-6xl">أكثر من 120 دولة. معيار تشغيلي واحد.</h1>
-          <p className="mt-6 max-w-2xl text-white/80">شبكة من المراكز والبوابات ومحطات الشركاء مصمّمة للمرونة — لتضمن أن لشحناتك مساراً دائماً للأمام.</p>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-foreground md:text-6xl">أكثر من 120 دولة. معيار تشغيلي واحد.</h1>
+          <p className="mt-6 max-w-2xl text-muted-foreground">شبكة من المراكز والبوابات ومحطات الشركاء مصمّمة للمرونة — لتضمن أن لشحناتك مساراً دائماً للأمام.</p>
         </div>
       </section>
 
