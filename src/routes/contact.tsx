@@ -30,7 +30,7 @@ function Contact() {
         <div className="container-x grid gap-12 md:grid-cols-[1fr_1.2fr]">
           <div className="space-y-8">
             {[
-              { icon: MapPin, t: "Headquarters", d: "Marrakech St, Al Garhoud,\nDubai, United Arab Emirates" },
+              { icon: MapPin, t: "Headquarters", d: "Riyadh\nKSA" },
               { icon: Phone, t: "Call us", d: "+971 600 51 3333\nMon–Sun, 24/7 dispatch" },
               { icon: Mail, t: "Email", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
