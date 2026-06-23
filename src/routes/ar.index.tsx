@@ -111,7 +111,7 @@ function HomeAr() {
               { icon: Timer, value: "98.7%", label: "التزام بالمواعيد", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "دعم العمليات", color: "bg-rose-50 text-rose-600" },
             ].map(({ icon: Icon, value, label, color }) => (
-              <motion.div key={label} variants={fadeUp} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
+              <motion.div key={label} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
                 <span className={`mx-auto grid h-12 w-12 place-items-center rounded-xl ${color}`}>
                   <Icon className="h-6 w-6" />
                 </span>
@@ -141,7 +141,7 @@ function HomeAr() {
               { icon: Truck, title: "النقل البري", desc: "نقل عابر للحدود وأساطيل توصيل إقليمية للميل الأخير." },
               { icon: Warehouse, title: "التخزين", desc: "مستودعات جمركية وحلول تنفيذ وتقنيات مخزون في مراكز استراتيجية." },
             ].map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} variants={fadeUp} whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
                 <Link to="/ar/services" className="group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-elevated)]">
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-navy-deep">
                     <Icon className="h-6 w-6" />
