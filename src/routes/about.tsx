@@ -56,7 +56,7 @@ function About() {
           <h2 className="font-display text-3xl font-bold md:text-4xl">Milestones</h2>
           <ol className="mt-10 grid gap-6 md:grid-cols-2">
             {[
-              ["1996", "UPL founded in Dubai with a single-truck operation"],
+              ["1996", "UPL founded in Riyadh with a single-truck operation"],
               ["2004", "First international hub opens in Riyadh"],
               ["2012", "Air freight division launched with priority GCC service"],
               ["2018", "1 million parcels delivered in a single month"],
