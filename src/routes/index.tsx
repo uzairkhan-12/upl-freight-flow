@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
-import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3 } from "lucide-react";
+import { ArrowRight, Search, Plane, Ship, Truck, Warehouse, Globe2, ShieldCheck, Clock, BarChart3, Package, Timer, Headset } from "lucide-react";
 import heroPort from "@/assets/hero-port.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import fleet from "@/assets/fleet-trucks.jpg";
@@ -81,26 +81,37 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section className="border-b border-border bg-secondary">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
-          variants={stagger}
-          className="container-x grid grid-cols-2 gap-8 py-12 md:grid-cols-4"
-        >
-          {[
-            ["120+", "Countries served"],
-            ["3.2M", "Shipments / year"],
-            ["98.7%", "On-time delivery"],
-            ["24/7", "Operations support"],
-          ].map(([n, l]) => (
-            <motion.div key={l} variants={fadeUp}>
-              <div className="font-display text-3xl font-bold text-foreground md:text-4xl">{n}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{l}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+      <section className="section-pad bg-secondary">
+        <div className="container-x">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={stagger}
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {[
+              { icon: Globe2, value: "120+", label: "Countries served", color: "bg-sky-50 text-sky-600" },
+              { icon: Package, value: "3.2M", label: "Shipments / year", color: "bg-amber-50 text-amber-600" },
+              { icon: Timer, value: "98.7%", label: "On-time delivery", color: "bg-emerald-50 text-emerald-600" },
+              { icon: Headset, value: "24/7", label: "Operations support", color: "bg-rose-50 text-rose-600" },
+            ].map(({ icon: Icon, value, label, color }) => (
+              <motion.div
+                key={label}
+                variants={fadeUp}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm transition hover:border-accent hover:shadow-[var(--shadow-elevated)]"
+              >
+                <span className={`mx-auto grid h-14 w-14 place-items-center rounded-2xl ${color}`}>
+                  <Icon className="h-7 w-7" />
+                </span>
+                <div className="mt-5 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">{value}</div>
+                <div className="mt-2 text-sm font-medium text-muted-foreground">{label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       {/* SERVICES */}
