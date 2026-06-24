@@ -51,7 +51,7 @@ function Contact() {
 
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+          className="mx-auto max-w-4xl rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
         >
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--gradient-amber)]" />
