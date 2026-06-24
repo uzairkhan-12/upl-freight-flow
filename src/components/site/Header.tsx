@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Package } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useIsArabic } from "@/lib/i18n";
+import uplLogo from "@/assets/upl-logo.png.asset.json";
 
 const navEn = [
   { to: "/", label: "Home" },
@@ -12,7 +13,7 @@ const navEn = [
 ] as const;
 
 const navAr = [
-  { to: "/ar/", label: "الرئيسية" },
+  { to: "/ar", label: "الرئيسية" },
   { to: "/ar/services", label: "الخدمات" },
   { to: "/ar/network", label: "الشبكة" },
   { to: "/ar/about", label: "من نحن" },
@@ -25,17 +26,20 @@ export function Header() {
   const nav = ar ? navAr : navEn;
   const trackHref = ar ? "/ar/track" : "/track";
   const trackLabel = ar ? "تتبع الشحنة" : "Track Shipment";
-  const toggleHref = ar ? "/" : "/ar/";
+  const toggleHref = ar ? "/" : "/ar";
   const toggleLabel = ar ? "EN" : "ع";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="container-x flex h-16 items-center justify-between">
-        <Link to={ar ? "/ar/" : "/"} className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-[var(--gradient-amber)] text-navy-deep">
-            <Package className="h-5 w-5" />
-          </span>
-          UPL<span className="text-accent">.</span>
+        <Link to={ar ? "/ar" : "/"} className="flex items-center gap-2">
+          <img
+            src={uplLogo.url}
+            alt="UPL"
+            className="h-9 w-auto object-contain"
+            width={1280}
+            height={629}
+          />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((n) => (
@@ -44,7 +48,7 @@ export function Header() {
               to={n.to}
               className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
-              activeOptions={{ exact: n.to === "/" || n.to === "/ar/" }}
+              activeOptions={{ exact: n.to === "/" || n.to === "/ar" }}
             >
               {n.label}
             </Link>
