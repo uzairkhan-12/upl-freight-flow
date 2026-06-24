@@ -40,7 +40,7 @@ function Contact() {
               { icon: Mail, t: "Email", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-[var(--shadow-soft)]">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-amber)] text-white shadow-[var(--shadow-amber)]">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-white shadow-[var(--shadow-amber)]">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-semibold">{t}</h3>
