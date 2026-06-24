@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import fleet from "@/assets/fleet-trucks.jpg";
+import fleetRiyadh from "@/assets/fleet-riyadh.jpg";
+import warehouse from "@/assets/warehouse.jpg";
+import airFreight from "@/assets/air-freight.jpg";
+import heroPort from "@/assets/hero-port.jpg";
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -51,7 +56,55 @@ function About() {
         </div>
       </section>
 
+      <section className="section-pad">
+        <div className="container-x">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Inside UPL</p>
+              <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">A look at our operation.</h2>
+            </div>
+            <p className="hidden max-w-md text-muted-foreground md:block">
+              Hubs, fleets, and people — the moving parts behind every shipment.
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            <div className="group relative col-span-2 row-span-2 overflow-hidden rounded-3xl">
+              <img src={heroPort} alt="UPL port operations" loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
+                <p className="font-display text-lg font-semibold">Global gateways</p>
+                <p className="text-sm text-white/80">Sea freight across every major lane.</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={warehouse} alt="UPL warehouse" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">1.4M sqft warehousing</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={airFreight} alt="UPL air freight" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">Priority air freight</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={fleetRiyadh} alt="UPL Riyadh fleet" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">Riyadh hub</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={fleet} alt="UPL fleet" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">10,000+ vehicles</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad bg-secondary">
+
         <div className="container-x">
           <h2 className="font-display text-3xl font-bold md:text-4xl">Milestones</h2>
           <ol className="mt-10 grid gap-6 md:grid-cols-2">

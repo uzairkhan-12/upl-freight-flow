@@ -26,8 +26,13 @@ function Contact() {
         </div>
       </section>
 
-      <section className="section-pad">
-        <div className="container-x grid gap-12 md:grid-cols-[1fr_1.2fr]">
+      <section className="section-pad relative overflow-hidden">
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <span className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-accent/20 blur-3xl blob-a" />
+          <span className="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-accent/15 blur-3xl blob-b" />
+          <span className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[var(--navy-deep)]/10 blur-3xl blob-c" />
+        </div>
+        <div className="container-x relative grid gap-12 md:grid-cols-[1fr_1.2fr]">
           <div className="space-y-8">
             {[
               { icon: MapPin, t: "Headquarters", d: "Riyadh\nKSA" },
@@ -35,7 +40,7 @@ function Contact() {
               { icon: Mail, t: "Email", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-5">
-              <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-foreground">
+              <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-white shadow-[var(--shadow-amber)]">
                 <Icon className="h-5 w-5" />
               </span>
               <div>
@@ -45,6 +50,7 @@ function Contact() {
             </div>
           ))}
         </div>
+
 
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
