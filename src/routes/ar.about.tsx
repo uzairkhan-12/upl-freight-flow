@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import fleet from "@/assets/fleet-trucks.jpg";
+import fleetRiyadh from "@/assets/fleet-riyadh.jpg";
+import warehouse from "@/assets/warehouse.jpg";
+import airFreight from "@/assets/air-freight.jpg";
+import heroPort from "@/assets/hero-port.jpg";
+
 
 export const Route = createFileRoute("/ar/about")({
   head: () => ({
