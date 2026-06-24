@@ -131,9 +131,24 @@
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+@keyframes blob-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.08); }
+}
+@keyframes blob-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-35px, 40px) scale(1.05); }
+}
+@keyframes blob-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(25px, 25px) scale(0.95); }
+}
 
 @utility amber-pulse { animation: blue-pulse 4s ease-out infinite; }
 @utility amber-float { animation: blue-float 6s ease-in-out infinite; }
+@utility blob-a { animation: blob-drift-a 16s ease-in-out infinite; }
+@utility blob-b { animation: blob-drift-b 20s ease-in-out infinite; }
+@utility blob-c { animation: blob-drift-c 24s ease-in-out infinite; }
 
 @utility card-sheen {
   position: relative;
