@@ -96,7 +96,7 @@ function HomeAr() {
                 ].map(({ icon: Icon, label, to, accent }) => (
                   <motion.div key={label} variants={fadeUp} className="flex flex-col items-center text-center">
                     <Link to={to} className="group flex flex-col items-center gap-4">
-                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-foreground shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
+                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-accent-foreground shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
                         <Icon className="h-7 w-7" />
                       </span>
                       <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-accent">{label}</span>
@@ -146,7 +146,7 @@ function HomeAr() {
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
                 <Link to="/ar/services" className="card-sheen group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-amber)]">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-accent-foreground">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
@@ -212,7 +212,7 @@ function HomeAr() {
                 transition={{ type: "spring", stiffness: 180, damping: 28 }}
                 className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-foreground group-hover:amber-pulse">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-accent-foreground group-hover:amber-pulse">
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-foreground">{title}</h3>
@@ -252,7 +252,7 @@ function HomeAr() {
                   { icon: Factory, label: "التصنيع" },
                 ].map(({ icon: Icon, label }) => (
                   <motion.div key={label} variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 180, damping: 28 }} className="group flex cursor-default items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-500 hover:border-accent/50 hover:shadow-[var(--shadow-soft)]">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-foreground">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary text-foreground transition-colors duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
                     <span className="text-sm font-semibold text-foreground">{label}</span>
