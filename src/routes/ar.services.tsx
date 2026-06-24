@@ -45,7 +45,7 @@ function ServicesAr() {
           {services.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="group rounded-2xl border border-border bg-card p-8 transition hover:-translate-y-1 hover:border-accent hover:shadow-[var(--shadow-soft)]">
               <div className="flex items-start gap-5">
-                <span className="grid h-14 w-14 flex-none place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-white">
+                <span className="grid h-14 w-14 flex-none place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-amber group-hover:text-white">
                   <Icon className="h-7 w-7" />
                 </span>
                 <div>

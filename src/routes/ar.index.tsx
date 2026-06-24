@@ -146,7 +146,7 @@ function HomeAr() {
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div key={title} variants={fadeUp} whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 180, damping: 28 }}>
                 <Link to="/ar/services" className="card-sheen group block h-full rounded-2xl border border-border bg-card p-7 transition hover:border-accent hover:shadow-[var(--shadow-amber)]">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-[var(--gradient-amber)] group-hover:text-white">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-foreground transition group-hover:bg-amber group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
@@ -212,7 +212,7 @@ function HomeAr() {
                 transition={{ type: "spring", stiffness: 180, damping: 28 }}
                 className="card-sheen accent-bar group rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:border-accent hover:shadow-[var(--shadow-amber)]"
               >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-[var(--gradient-amber)] group-hover:text-white group-hover:amber-pulse">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-all duration-500 group-hover:bg-amber group-hover:text-white group-hover:amber-pulse">
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-semibold transition-colors group-hover:text-foreground">{title}</h3>
