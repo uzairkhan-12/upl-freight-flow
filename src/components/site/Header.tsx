@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useIsArabic } from "@/lib/i18n";
 import uplLogo from "@/assets/upl-logo.png.asset.json";
 
+const assetOrigin = "https://id-preview--93e295b6-128d-4984-9150-dad15f3bbf84.lovable.app";
+const logoUrl = uplLogo.url.startsWith("http") ? uplLogo.url : `${assetOrigin}${uplLogo.url}`;
+
 const navEn = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
@@ -11,6 +14,7 @@ const navEn = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
+
 
 const navAr = [
   { to: "/ar", label: "الرئيسية" },
@@ -34,7 +38,7 @@ export function Header() {
       <div className="container-x flex h-16 items-center justify-between">
         <Link to={ar ? "/ar" : "/"} className="flex items-center gap-2">
           <img
-            src={uplLogo.url}
+            src={logoUrl}
             alt="UPL"
             className="h-9 w-auto object-contain"
             width={1280}

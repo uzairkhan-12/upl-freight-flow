@@ -141,7 +141,7 @@ function Home() {
           >
             {[
               { icon: Globe2, value: "120+", label: "Countries served", color: "bg-blue-50 text-blue-600" },
-              { icon: Package, value: "3.2M", label: "Shipments / year", color: "bg-amber-50 text-amber-600" },
+              { icon: Package, value: "3.2M", label: "Shipments / year", color: "bg-blue-50 text-blue-600" },
               { icon: Timer, value: "98.7%", label: "On-time delivery", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "Operations support", color: "bg-rose-50 text-rose-600" },
             ].map(({ icon: Icon, value, label, color }) => (
