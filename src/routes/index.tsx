@@ -121,7 +121,7 @@ function Home() {
                       to={label === "Track" ? "/track" : label === "Find Us" ? "/network" : "/contact"}
                       className="group flex flex-col items-center gap-4"
                     >
-                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-foreground shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
+                      <span className={`grid h-16 w-16 place-items-center rounded-2xl shadow-sm transition-all duration-300 group-hover:-translate-y-1 ${accent ? "bg-accent text-white shadow-[var(--shadow-amber)]" : "bg-secondary text-foreground"}`}>
                         <Icon className="h-7 w-7" />
                       </span>
                       <span className="max-w-[10rem] text-sm font-semibold text-foreground transition-colors group-hover:text-accent">{label}</span>
