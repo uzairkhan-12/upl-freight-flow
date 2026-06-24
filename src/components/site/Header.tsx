@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useIsArabic } from "@/lib/i18n";
-import uplLogo from "@/assets/upl-logo.png.asset.json";
+import uplLogo from "@/assets/upl-logo-transparent.png.asset.json";
 
 const assetOrigin = "https://id-preview--93e295b6-128d-4984-9150-dad15f3bbf84.lovable.app";
 const logoUrl = uplLogo.url.startsWith("http") ? uplLogo.url : `${assetOrigin}${uplLogo.url}`;
