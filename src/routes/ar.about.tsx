@@ -53,7 +53,55 @@ function AboutAr() {
         </div>
       </section>
 
+      <section className="section-pad">
+        <div className="container-x">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">من داخل UPL</p>
+              <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">نظرة على عملياتنا.</h2>
+            </div>
+            <p className="hidden max-w-md text-muted-foreground md:block">
+              مراكز وأساطيل وكوادر — الأجزاء المتحركة خلف كل شحنة.
+            </p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            <div className="group relative col-span-2 row-span-2 overflow-hidden rounded-3xl">
+              <img src={heroPort} alt="عمليات الموانئ" loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
+                <p className="font-display text-lg font-semibold">بوابات عالمية</p>
+                <p className="text-sm text-white/80">شحن بحري عبر كل الخطوط الرئيسية.</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={warehouse} alt="مستودع UPL" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">1.4 مليون قدم² تخزين</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={airFreight} alt="الشحن الجوي" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">شحن جوي بأولوية</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={fleetRiyadh} alt="أسطول الرياض" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">مركز الرياض</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl">
+              <img src={fleet} alt="أسطول UPL" loading="lazy" className="aspect-square h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                <p className="text-sm font-semibold">+10,000 مركبة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad bg-secondary">
+
         <div className="container-x">
           <h2 className="font-display text-3xl font-bold md:text-4xl">المحطات</h2>
           <ol className="mt-10 grid gap-6 md:grid-cols-2">
