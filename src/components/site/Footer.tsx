@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { Package, Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useIsArabic } from "@/lib/i18n";
+import uplLogo from "@/assets/upl-logo.png.asset.json";
+
+const assetOrigin = "https://id-preview--93e295b6-128d-4984-9150-dad15f3bbf84.lovable.app";
+const logoUrl = uplLogo.url.startsWith("http") ? uplLogo.url : `${assetOrigin}${uplLogo.url}`;
 
 export function Footer() {
   const ar = useIsArabic();
@@ -50,11 +54,14 @@ export function Footer() {
     <footer className="bg-secondary text-muted-foreground">
       <div className="container-x section-pad grid gap-12 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 text-xl font-bold text-foreground">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-[var(--gradient-amber)] text-foreground">
-              <Package className="h-5 w-5" />
-            </span>
-            UPL<span className="text-accent">.</span>
+          <div className="flex items-center gap-2">
+            <img
+              src={logoUrl}
+              alt="UPL"
+              className="h-9 w-auto object-contain"
+              width={1280}
+              height={629}
+            />
           </div>
           <p className="mt-4 text-sm leading-relaxed">{t.tagline}</p>
           <div className="mt-6 flex gap-3">

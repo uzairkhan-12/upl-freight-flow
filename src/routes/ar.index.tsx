@@ -110,7 +110,7 @@ function HomeAr() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }} variants={stagger} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: Globe2, value: "+120", label: "دولة نخدمها", color: "bg-blue-50 text-blue-600" },
-              { icon: Package, value: "3.2M", label: "شحنة سنوياً", color: "bg-amber-50 text-amber-600" },
+              { icon: Package, value: "3.2M", label: "شحنة سنوياً", color: "bg-blue-50 text-blue-600" },
               { icon: Timer, value: "98.7%", label: "التزام بالمواعيد", color: "bg-emerald-50 text-emerald-600" },
               { icon: Headset, value: "24/7", label: "دعم العمليات", color: "bg-rose-50 text-rose-600" },
             ].map(({ icon: Icon, value, label, color }) => (
