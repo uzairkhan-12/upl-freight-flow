@@ -32,29 +32,26 @@ function ContactAr() {
           <span className="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-accent/15 blur-3xl blob-b" />
           <span className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[var(--navy-deep)]/10 blur-3xl blob-c" />
         </div>
-        <div className="container-x relative grid gap-12 md:grid-cols-[1fr_1.2fr]">
-          <div className="space-y-8">
+        <div className="container-x relative">
+          <div className="mx-auto mb-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
             {[
               { icon: MapPin, t: "المقر الرئيسي", d: "الرياض\nالمملكة العربية السعودية" },
               { icon: Phone, t: "اتصل بنا", d: "+966 11 510 3333\nالأحد–السبت، إرسال 24/7" },
               { icon: Mail, t: "البريد الإلكتروني", d: "hello@upl.com\nsales@upl.com" },
             ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="flex gap-5">
-              <span className="grid h-12 w-12 flex-none place-items-center rounded-xl bg-[var(--gradient-amber)] text-white shadow-[var(--shadow-amber)]">
-                <Icon className="h-5 w-5" />
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-semibold">{t}</h3>
-                <p className="mt-1 whitespace-pre-line text-muted-foreground">{d}</p>
+              <div key={t} className="flex flex-col items-center rounded-2xl border border-border bg-card p-6 text-center shadow-[var(--shadow-soft)]">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-white shadow-[var(--shadow-amber)]">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-semibold">{t}</h3>
+                <p className="mt-1 whitespace-pre-line text-sm text-muted-foreground">{d}</p>
               </div>
-            </div>
-          ))}
-        </div>
-
+            ))}
+          </div>
 
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+          className="mx-auto max-w-4xl rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
         >
             <div className="flex items-center gap-3">
               <span className="h-8 w-1 rounded-full bg-[var(--gradient-amber)]" />
