@@ -145,10 +145,10 @@
 }
 @keyframes marquee-x {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); }
+  100% { transform: translateX(-50%); }
 }
 @keyframes marquee-x-reverse {
-  0% { transform: translateX(-25%); }
+  0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
 
