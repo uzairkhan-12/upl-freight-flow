@@ -1,14 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { MapPin } from "lucide-react";
+import { CityMarquee } from "@/components/site/CityMarquee";
 
 const regions = [
-  { name: "Middle East", hubs: ["Riyadh (HQ)", "Dubai", "Doha", "Kuwait City", "Muscat", "Manama"] },
-  { name: "Asia Pacific", hubs: ["Singapore", "Mumbai", "Hong Kong", "Shanghai", "Jakarta", "Bangkok"] },
-  { name: "Europe", hubs: ["London", "Frankfurt", "Rotterdam", "Madrid", "Istanbul", "Milan"] },
-  { name: "Africa", hubs: ["Cairo", "Nairobi", "Lagos", "Johannesburg", "Casablanca"] },
-  { name: "Americas", hubs: ["New York", "Miami", "Los Angeles", "Mexico City", "São Paulo"] },
+  {
+    name: "Middle East",
+    hubs: [
+      { name: "Riyadh (HQ)", flag: "🇸🇦" },
+      { name: "Dubai", flag: "🇦🇪" },
+      { name: "Doha", flag: "🇶🇦" },
+      { name: "Kuwait City", flag: "🇰🇼" },
+      { name: "Muscat", flag: "🇴🇲" },
+      { name: "Manama", flag: "🇧🇭" },
+    ],
+  },
+  {
+    name: "Asia Pacific",
+    hubs: [
+      { name: "Singapore", flag: "🇸🇬" },
+      { name: "Mumbai", flag: "🇮🇳" },
+      { name: "Hong Kong", flag: "🇭🇰" },
+      { name: "Shanghai", flag: "🇨🇳" },
+      { name: "Jakarta", flag: "🇮🇩" },
+      { name: "Bangkok", flag: "🇹🇭" },
+    ],
+  },
+  {
+    name: "Europe",
+    hubs: [
+      { name: "London", flag: "🇬🇧" },
+      { name: "Frankfurt", flag: "🇩🇪" },
+      { name: "Rotterdam", flag: "🇳🇱" },
+      { name: "Madrid", flag: "🇪🇸" },
+      { name: "Istanbul", flag: "🇹🇷" },
+      { name: "Milan", flag: "🇮🇹" },
+    ],
+  },
+  {
+    name: "Africa",
+    hubs: [
+      { name: "Cairo", flag: "🇪🇬" },
+      { name: "Nairobi", flag: "🇰🇪" },
+      { name: "Lagos", flag: "🇳🇬" },
+      { name: "Johannesburg", flag: "🇿🇦" },
+      { name: "Casablanca", flag: "🇲🇦" },
+    ],
+  },
+  {
+    name: "Americas",
+    hubs: [
+      { name: "New York", flag: "🇺🇸" },
+      { name: "Miami", flag: "🇺🇸" },
+      { name: "Los Angeles", flag: "🇺🇸" },
+      { name: "Mexico City", flag: "🇲🇽" },
+      { name: "São Paulo", flag: "🇧🇷" },
+    ],
+  },
 ];
+
 
 export const Route = createFileRoute("/network")({
   head: () => ({
