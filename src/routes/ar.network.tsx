@@ -1,14 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { MapPin } from "lucide-react";
+import { CityMarquee } from "@/components/site/CityMarquee";
 
 const regions = [
-  { name: "الشرق الأوسط", hubs: ["الرياض (المقر)", "دبي", "الدوحة", "الكويت", "مسقط", "المنامة"] },
-  { name: "آسيا والمحيط الهادئ", hubs: ["سنغافورة", "مومباي", "هونغ كونغ", "شنغهاي", "جاكرتا", "بانكوك"] },
-  { name: "أوروبا", hubs: ["لندن", "فرانكفورت", "روتردام", "مدريد", "إسطنبول", "ميلانو"] },
-  { name: "أفريقيا", hubs: ["القاهرة", "نيروبي", "لاغوس", "جوهانسبرغ", "الدار البيضاء"] },
-  { name: "الأمريكتين", hubs: ["نيويورك", "ميامي", "لوس أنجلوس", "مكسيكو سيتي", "ساو باولو"] },
+  {
+    name: "الشرق الأوسط",
+    hubs: [
+      { name: "الرياض (المقر)", flag: "🇸🇦" },
+      { name: "دبي", flag: "🇦🇪" },
+      { name: "الدوحة", flag: "🇶🇦" },
+      { name: "الكويت", flag: "🇰🇼" },
+      { name: "مسقط", flag: "🇴🇲" },
+      { name: "المنامة", flag: "🇧🇭" },
+    ],
+  },
+  {
+    name: "آسيا والمحيط الهادئ",
+    hubs: [
+      { name: "سنغافورة", flag: "🇸🇬" },
+      { name: "مومباي", flag: "🇮🇳" },
+      { name: "هونغ كونغ", flag: "🇭🇰" },
+      { name: "شنغهاي", flag: "🇨🇳" },
+      { name: "جاكرتا", flag: "🇮🇩" },
+      { name: "بانكوك", flag: "🇹🇭" },
+    ],
+  },
+  {
+    name: "أوروبا",
+    hubs: [
+      { name: "لندن", flag: "🇬🇧" },
+      { name: "فرانكفورت", flag: "🇩🇪" },
+      { name: "روتردام", flag: "🇳🇱" },
+      { name: "مدريد", flag: "🇪🇸" },
+      { name: "إسطنبول", flag: "🇹🇷" },
+      { name: "ميلانو", flag: "🇮🇹" },
+    ],
+  },
+  {
+    name: "أفريقيا",
+    hubs: [
+      { name: "القاهرة", flag: "🇪🇬" },
+      { name: "نيروبي", flag: "🇰🇪" },
+      { name: "لاغوس", flag: "🇳🇬" },
+      { name: "جوهانسبرغ", flag: "🇿🇦" },
+      { name: "الدار البيضاء", flag: "🇲🇦" },
+    ],
+  },
+  {
+    name: "الأمريكتين",
+    hubs: [
+      { name: "نيويورك", flag: "🇺🇸" },
+      { name: "ميامي", flag: "🇺🇸" },
+      { name: "لوس أنجلوس", flag: "🇺🇸" },
+      { name: "مكسيكو سيتي", flag: "🇲🇽" },
+      { name: "ساو باولو", flag: "🇧🇷" },
+    ],
+  },
 ];
+
 
 export const Route = createFileRoute("/ar/network")({
   head: () => ({
