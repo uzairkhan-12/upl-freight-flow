@@ -1,10 +1,11 @@
 type City = { name: string; flag: string };
 
 export function CityMarquee({ cities, reverse = false }: { cities: City[]; reverse?: boolean }) {
-  const items = [...cities, ...cities];
+  const copies = 4;
+  const items = Array.from({ length: copies }, () => cities).flat();
   return (
     <div className="marquee-mask overflow-hidden py-2">
-      <div className={`flex w-max gap-3 ${reverse ? "marquee-track-reverse" : "marquee-track"}`}>
+      <div className={`flex w-max ${reverse ? "marquee-track-reverse" : "marquee-track"}`}>
         {items.map((c, i) => (
           <span
             key={`${c.name}-${i}`}
