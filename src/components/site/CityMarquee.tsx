@@ -5,7 +5,7 @@ export function CityMarquee({ cities, reverse = false }: { cities: City[]; rever
   const items = Array.from({ length: copies }, () => cities).flat();
   return (
     <div className="marquee-mask overflow-hidden py-2">
-      <div className={`flex w-max ${reverse ? "marquee-track-reverse" : "marquee-track"}`}>
+      <div className={`flex w-max ${reverse ? "marquee-track-reverse" : "marquee-track"}`} style={{ direction: "ltr" }}>
         {items.map((c, i) => (
           <span
             key={`${c.name}-${i}`}
