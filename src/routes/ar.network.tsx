@@ -1,14 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { MapPin } from "lucide-react";
+import { CityMarquee } from "@/components/site/CityMarquee";
 
 const regions = [
-  { name: "الشرق الأوسط", hubs: ["الرياض (المقر)", "دبي", "الدوحة", "الكويت", "مسقط", "المنامة"] },
-  { name: "آسيا والمحيط الهادئ", hubs: ["سنغافورة", "مومباي", "هونغ كونغ", "شنغهاي", "جاكرتا", "بانكوك"] },
-  { name: "أوروبا", hubs: ["لندن", "فرانكفورت", "روتردام", "مدريد", "إسطنبول", "ميلانو"] },
-  { name: "أفريقيا", hubs: ["القاهرة", "نيروبي", "لاغوس", "جوهانسبرغ", "الدار البيضاء"] },
-  { name: "الأمريكتين", hubs: ["نيويورك", "ميامي", "لوس أنجلوس", "مكسيكو سيتي", "ساو باولو"] },
+  {
+    name: "الشرق الأوسط",
+    hubs: [
+      { name: "الرياض (المقر)", flag: "🇸🇦" },
+      { name: "دبي", flag: "🇦🇪" },
+      { name: "الدوحة", flag: "🇶🇦" },
+      { name: "الكويت", flag: "🇰🇼" },
+      { name: "مسقط", flag: "🇴🇲" },
+      { name: "المنامة", flag: "🇧🇭" },
+    ],
+  },
+  {
+    name: "آسيا والمحيط الهادئ",
+    hubs: [
+      { name: "سنغافورة", flag: "🇸🇬" },
+      { name: "مومباي", flag: "🇮🇳" },
+      { name: "هونغ كونغ", flag: "🇭🇰" },
+      { name: "شنغهاي", flag: "🇨🇳" },
+      { name: "جاكرتا", flag: "🇮🇩" },
+      { name: "بانكوك", flag: "🇹🇭" },
+    ],
+  },
+  {
+    name: "أوروبا",
+    hubs: [
+      { name: "لندن", flag: "🇬🇧" },
+      { name: "فرانكفورت", flag: "🇩🇪" },
+      { name: "روتردام", flag: "🇳🇱" },
+      { name: "مدريد", flag: "🇪🇸" },
+      { name: "إسطنبول", flag: "🇹🇷" },
+      { name: "ميلانو", flag: "🇮🇹" },
+    ],
+  },
+  {
+    name: "أفريقيا",
+    hubs: [
+      { name: "القاهرة", flag: "🇪🇬" },
+      { name: "نيروبي", flag: "🇰🇪" },
+      { name: "لاغوس", flag: "🇳🇬" },
+      { name: "جوهانسبرغ", flag: "🇿🇦" },
+      { name: "الدار البيضاء", flag: "🇲🇦" },
+    ],
+  },
+  {
+    name: "الأمريكتين",
+    hubs: [
+      { name: "نيويورك", flag: "🇺🇸" },
+      { name: "ميامي", flag: "🇺🇸" },
+      { name: "لوس أنجلوس", flag: "🇺🇸" },
+      { name: "مكسيكو سيتي", flag: "🇲🇽" },
+      { name: "ساو باولو", flag: "🇧🇷" },
+    ],
+  },
 ];
+
 
 export const Route = createFileRoute("/ar/network")({
   head: () => ({
@@ -34,19 +83,21 @@ function NetworkAr() {
       </section>
 
       <section className="section-pad">
-        <div className="container-x grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {regions.map((r) => (
-            <div key={r.name} className="rounded-2xl border border-border bg-card p-8">
-              <h3 className="font-display text-2xl font-semibold">{r.name}</h3>
-              <ul className="mt-5 grid gap-2 text-sm text-muted-foreground">
-                {r.hubs.map((h) => (
-                  <li key={h} className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" />{h}</li>
-                ))}
-              </ul>
+        <div className="container-x space-y-6">
+          {regions.map((r, idx) => (
+            <div key={r.name} className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="font-display text-2xl font-semibold">{r.name}</h3>
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{r.hubs.length} مراكز</span>
+              </div>
+              <div className="mt-5">
+                <CityMarquee cities={r.hubs} reverse={idx % 2 === 1} />
+              </div>
             </div>
           ))}
         </div>
       </section>
+
 
       <section className="section-pad bg-secondary">
         <div className="container-x">
