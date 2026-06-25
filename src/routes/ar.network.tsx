@@ -83,19 +83,21 @@ function NetworkAr() {
       </section>
 
       <section className="section-pad">
-        <div className="container-x grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {regions.map((r) => (
-            <div key={r.name} className="rounded-2xl border border-border bg-card p-8">
-              <h3 className="font-display text-2xl font-semibold">{r.name}</h3>
-              <ul className="mt-5 grid gap-2 text-sm text-muted-foreground">
-                {r.hubs.map((h) => (
-                  <li key={h} className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" />{h}</li>
-                ))}
-              </ul>
+        <div className="container-x space-y-6">
+          {regions.map((r, idx) => (
+            <div key={r.name} className="rounded-2xl border border-border bg-card p-6 md:p-8">
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="font-display text-2xl font-semibold">{r.name}</h3>
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{r.hubs.length} مراكز</span>
+              </div>
+              <div className="mt-5">
+                <CityMarquee cities={r.hubs} reverse={idx % 2 === 1} />
+              </div>
             </div>
           ))}
         </div>
       </section>
+
 
       <section className="section-pad bg-secondary">
         <div className="container-x">
